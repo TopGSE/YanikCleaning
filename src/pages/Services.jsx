@@ -7,6 +7,8 @@ import {
   FaSchool,
   FaIndustry,
 } from "react-icons/fa";
+import { Typed } from "react-typed";
+import "./ServicesAdvancedTyped.css";
 
 const Services = () => {
   const allServices = [
@@ -115,7 +117,28 @@ const Services = () => {
         style={{ backgroundImage: "url(/images/services-hero.jpg)" }}
       >
         <div className="hero-content">
-          <h1 className="hero-title">Our Services</h1>
+          <h1 className="hero-title advanced-typed-title">
+            <span className="typed-outer">
+              <Typed
+                strings={[
+                  "<span class='typed-main'>Onze Diensten</span>",
+                  "<span class='typed-main highlight'>Professionele Schoonmaak</span>",
+                  "<span class='typed-main accent'>Altijd een Schone Werkplek</span>",
+                  "<span class='typed-main pulse'>Voor Elk Bedrijf een Oplossing</span>",
+                ]}
+                typeSpeed={55}
+                backSpeed={30}
+                backDelay={1200}
+                loop
+                smartBackspace
+                showCursor
+                cursorChar="|"
+                fadeOut
+                fadeOutDelay={400}
+                html
+              />
+            </span>
+          </h1>
           <p className="hero-subtitle">
             Tailored cleaning solutions for every business need
           </p>

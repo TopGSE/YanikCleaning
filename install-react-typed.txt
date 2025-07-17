@@ -1,0 +1,5 @@
+npm install react-typed
+# or
+yarn add react-typed
+
+# This file is a reminder to install the package before using it in your code.

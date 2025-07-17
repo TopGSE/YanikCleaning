@@ -60,7 +60,7 @@ const Home = () => {
       <section className="hero">
         <video className="hero-video" autoPlay loop muted playsInline>
           <source
-            src="/public/videos/office-cleaning-video-hero.mp4"
+            src="/videos/office-cleaning-video-hero.mp4"
             type="video/mp4"
           />
         </video>
