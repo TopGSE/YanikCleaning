@@ -7,7 +7,7 @@ import {
   FaSchool,
   FaIndustry,
 } from "react-icons/fa";
-import { Typed } from "react-typed";
+import { Typewriter } from "react-simple-typewriter";
 import "./ServicesAdvancedTyped.css";
 
 const Services = () => {
@@ -114,28 +114,24 @@ const Services = () => {
       {/* Hero Section */}
       <section
         className="hero"
-        style={{ backgroundImage: "url(/images/services-hero.jpg)" }}
+        style={{ backgroundImage: "url(/images/vecteezy-foto-4.jpg)" }}
       >
         <div className="hero-content">
           <h1 className="hero-title advanced-typed-title">
             <span className="typed-outer">
-              <Typed
-                strings={[
-                  "<span class='typed-main'>Onze Diensten</span>",
-                  "<span class='typed-main highlight'>Professionele Schoonmaak</span>",
-                  "<span class='typed-main accent'>Altijd een Schone Werkplek</span>",
-                  "<span class='typed-main pulse'>Voor Elk Bedrijf een Oplossing</span>",
+              <Typewriter
+                words={[
+                  "Onze Diensten",
+                  "Professionele Schoonmaak",
+                  "Altijd een Schone Werkplek",
+                  "Voor Elk Bedrijf een Oplossing",
                 ]}
+                loop={0}
+                cursor
+                cursorStyle="|"
                 typeSpeed={55}
-                backSpeed={30}
-                backDelay={1200}
-                loop
-                smartBackspace
-                showCursor
-                cursorChar="|"
-                fadeOut
-                fadeOutDelay={400}
-                html
+                deleteSpeed={30}
+                delaySpeed={1200}
               />
             </span>
           </h1>
