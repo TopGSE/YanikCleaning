@@ -56,7 +56,7 @@ const Navbar = () => {
               className={location.pathname === "/about" ? "active" : ""}
               onClick={closeMobileMenu}
             >
-              About
+              Over Ons
             </Link>
           </li>
           <li>
@@ -65,7 +65,7 @@ const Navbar = () => {
               className={location.pathname === "/services" ? "active" : ""}
               onClick={closeMobileMenu}
             >
-              Services
+              Diensten
             </Link>
           </li>
           <li>
@@ -79,7 +79,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/contact" className="btn" onClick={closeMobileMenu}>
-              Get a Quote
+              Offerte aanvragen
             </Link>
           </li>
         </ul>

@@ -72,7 +72,7 @@ const Footer = () => {
             </div>
             <div className="contact-item">
               <FaMapMarkerAlt className="contact-icon" />
-              <span>123 Clean St, Toronto, Canada</span>
+              <span>Locatie Yanik Cleaning</span>
             </div>
           </div>
         </div>
