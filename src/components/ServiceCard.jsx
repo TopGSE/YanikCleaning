@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import "./ServiceCard.css";
 
 const ServiceCard = ({ service, detailed = false }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -14,7 +15,6 @@ const ServiceCard = ({ service, detailed = false }) => {
         <img src={service.image} alt={service.title} />
       </div>
       <div className="service-content">
-        <div className="service-icon">{service.icon || <span>✨</span>}</div>
         <h3>{service.title}</h3>
         <p>{service.description}</p>
         {detailed && (
@@ -30,7 +30,7 @@ const ServiceCard = ({ service, detailed = false }) => {
         <div className="service-footer">
           <span className="service-price">{service.price}</span>
           <Link to="/contact" className="btn btn-small">
-            Get Quote
+            Vraag offerte
           </Link>
         </div>
       </div>

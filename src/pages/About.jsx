@@ -12,13 +12,50 @@ const About = () => {
     <div className="about-page">
       {/* Hero Section */}
       <section
-        className="hero"
-        style={{ backgroundImage: "url(/images/about-hero.jpg)" }}
+        className="hero about-hero"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(30,144,255,0.25),rgba(0,0,0,0.35)), url(/images/about-hero.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          color: "#fff",
+          minHeight: "340px",
+          display: "flex",
+          alignItems: "center",
+          position: "relative",
+        }}
       >
-        <div className="hero-content">
-          <h1 className="hero-title">About Yanik Cleaning</h1>
-          <p className="hero-subtitle">
-            Professional cleaning services with a personal touch
+        <div
+          className="hero-content"
+          style={{
+            position: "relative",
+            zIndex: 2,
+            textAlign: "center",
+            width: "100%",
+          }}
+        >
+          <h1
+            className="hero-title"
+            style={{
+              fontSize: "2.7rem",
+              fontWeight: 800,
+              letterSpacing: ".01em",
+              marginBottom: "1.1rem",
+              textShadow: "0 4px 24px #0007",
+            }}
+          >
+            Maak kennis met Yanik Cleaning
+          </h1>
+          <p
+            className="hero-subtitle"
+            style={{
+              fontSize: "1.25rem",
+              fontWeight: 500,
+              opacity: 0.93,
+              textShadow: "0 2px 8px #0005",
+            }}
+          >
+            Betrouwbaar. Duurzaam. Toegewijd aan kwaliteit.
           </p>
         </div>
       </section>

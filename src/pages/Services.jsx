@@ -17,7 +17,7 @@ const Services = () => {
         "Daily, weekly, or monthly cleaning tailored to your business needs.",
       price: "$150+",
       icon: <FaBuilding />,
-      image: "/images/office-cleaning.jpg",
+      image: "/images/vecteezy-foto-3.jpg",
       details: [
         "Dusting and wiping all surfaces",
         "Vacuuming and mopping floors",
@@ -33,7 +33,7 @@ const Services = () => {
         "Complete cleaning solutions for retail spaces, restaurants, and more.",
       price: "$200+",
       icon: <FaStore />,
-      image: "/images/commercial-cleaning.jpg",
+      image: "/images/vecteezy-foto-4.jpg",
       details: [
         "Floor care and maintenance",
         "Window and glass cleaning",
@@ -49,7 +49,7 @@ const Services = () => {
         "Thorough cleaning for move-ins, move-outs, or seasonal refreshes.",
       price: "$300+",
       icon: <FaHome />,
-      image: "/images/deep-cleaning.jpg",
+      image: "/images/vecteezy-foto-1.jpg",
       details: [
         "Detailed cleaning of all areas",
         "Grout and tile cleaning",
@@ -65,7 +65,7 @@ const Services = () => {
         "Specialized cleaning for clinics, dental offices, and medical centers.",
       price: "$250+",
       icon: <FaHospital />,
-      image: "/images/medical-cleaning.jpg",
+      image: "/images/vecteezy-foto-6.jpg",
       details: [
         "HIPAA-compliant procedures",
         "Medical waste disposal",
@@ -80,7 +80,7 @@ const Services = () => {
       description: "Safe and thorough cleaning for schools and universities.",
       price: "$180+",
       icon: <FaSchool />,
-      image: "/images/school-cleaning.jpg",
+      image: "/images/vecteezy-foto-5.jpg",
       details: [
         "Classroom cleaning and sanitizing",
         "Locker room and gym cleaning",
@@ -96,7 +96,7 @@ const Services = () => {
         "Heavy-duty cleaning for warehouses and manufacturing facilities.",
       price: "$350+",
       icon: <FaIndustry />,
-      image: "/images/industrial-cleaning.jpg",
+      image: "/images/vecteezy-foto-2.jpg",
       details: [
         "Equipment and machinery cleaning",
         "High bay and floor cleaning",

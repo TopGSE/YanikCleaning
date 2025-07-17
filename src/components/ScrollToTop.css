@@ -1,0 +1,74 @@
+.scroll-to-top-btn {
+	position: fixed;
+	right: 2.2rem;
+	bottom: 2.2rem;
+	z-index: 9999;
+	background: none;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.25s;
+}
+
+.scroll-to-top-btn.visible {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.scroll-to-top-circle {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	background: linear-gradient(135deg, #1e90ff 60%, #38b6ff 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 24px 0 #1e90ff33;
+	animation: pulse 1.5s infinite;
+	position: relative;
+}
+
+/* Kleinere, fijnere pijl */
+/* Nog kleinere, subtielere pijl */
+.scroll-to-top-arrow {
+	color: #fff;
+	font-size: 0.92rem;
+	stroke-width: 2.2;
+	transition: transform 0.18s;
+}
+
+.scroll-to-top-btn:hover .scroll-to-top-arrow {
+	transform: translateY(-3px) scale(1.08);
+}
+
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0 #1e90ff44;
+	}
+
+	70% {
+		box-shadow: 0 0 0 16px #1e90ff00;
+	}
+
+	100% {
+		box-shadow: 0 0 0 0 #1e90ff00;
+	}
+}
+
+@media (max-width: 700px) {
+	.scroll-to-top-btn {
+		right: 1rem;
+		bottom: 1rem;
+	}
+
+	.scroll-to-top-circle {
+		width: 44px;
+		height: 44px;
+	}
+
+	.scroll-to-top-arrow {
+		font-size: 1.2rem;
+	}
+}
