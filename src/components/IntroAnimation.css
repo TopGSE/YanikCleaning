@@ -1,3 +1,26 @@
+/* Animated shine/reflection sweep for intro brand letters */
+.shine-sweep {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, rgba(255,255,255,0.0) 60%, rgba(255,255,255,0.7) 100%);
+  filter: blur(2px);
+  width: 0%;
+  height: 100%;
+  opacity: 0.7;
+  border-radius: 0.18em;
+  z-index: 2;
+  transition: none;
+}
+.shine-animate {
+  animation: shineSweepAnim 0.55s cubic-bezier(.77,0,.18,1);
+}
+@keyframes shineSweepAnim {
+  0% { left: -60%; width: 0%; opacity: 0.0; }
+  30% { left: 0%; width: 18%; opacity: 0.7; }
+  60% { left: 60%; width: 60%; opacity: 0.7; }
+  100% { left: 100%; width: 0%; opacity: 0.0; }
+}
 /* Seamless site content fade for intro transition */
 .site-content {
 	opacity: 0;

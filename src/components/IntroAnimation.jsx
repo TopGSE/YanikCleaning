@@ -85,8 +85,13 @@ const IntroAnimation = ({ onFinish }) => {
                 <span
                   key={i}
                   className={`yanik-letter${typed > i ? " letter-in" : ""}`}
+                  style={{ position: "relative", display: "inline-block" }}
                 >
                   {l}
+                  {/* Shine overlay */}
+                  {typed > i && (
+                    <span className={`shine-sweep${typed - 1 === i ? " shine-animate" : ""}`}></span>
+                  )}
                 </span>
               ))}
             </span>
