@@ -90,7 +90,11 @@ const IntroAnimation = ({ onFinish }) => {
                   {l}
                   {/* Shine overlay */}
                   {typed > i && (
-                    <span className={`shine-sweep${typed - 1 === i ? " shine-animate" : ""}`}></span>
+                    <span
+                      className={`shine-sweep${
+                        typed - 1 === i ? " shine-animate" : ""
+                      }`}
+                    ></span>
                   )}
                 </span>
               ))}
