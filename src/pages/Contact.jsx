@@ -7,7 +7,7 @@ import {
   FaServicestack,
 } from "react-icons/fa";
 import { useState } from "react";
-import "./contact.css";
+import "./Contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
