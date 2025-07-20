@@ -32,9 +32,9 @@
 }
 
 .trustedby-logo {
-	filter: grayscale(1) brightness(0.7) contrast(1.1);
-	opacity: 0.8;
-	transition: filter 0.2s, opacity 0.2s;
+	filter: none;
+	opacity: 1;
+	transition: none;
 	height: 60px;
 	display: flex;
 	align-items: center;
@@ -49,7 +49,7 @@
 }
 
 .trustedby-logo:hover {
-	filter: grayscale(0) brightness(1) contrast(1);
+	filter: none;
 	opacity: 1;
 }
 

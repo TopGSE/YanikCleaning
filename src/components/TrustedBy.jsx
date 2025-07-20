@@ -14,24 +14,24 @@ const companyLogos = [
     url: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
   },
   {
-    name: "Unilever",
-    url: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Unilever.svg",
+    name: "Apple",
+    url: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
   },
   {
-    name: "KPMG",
-    url: "https://upload.wikimedia.org/wikipedia/commons/6/6b/KPMG_logo.svg",
+    name: "Facebook",
+    url: "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
   },
   {
-    name: "ING",
-    url: "https://upload.wikimedia.org/wikipedia/commons/2/2c/ING_Group_N.V._Logo.svg",
+    name: "Twitter",
+    url: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Twitter-logo.svg",
   },
   {
-    name: "Philips",
-    url: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Philips_logo_new.svg",
+    name: "Netflix",
+    url: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
   },
   {
-    name: "Rabobank",
-    url: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Rabobank-Logo.svg",
+    name: "Uber",
+    url: "https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.svg",
   },
 ];
 
