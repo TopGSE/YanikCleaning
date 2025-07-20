@@ -41,7 +41,7 @@ const TrustedBy = () => (
       <div className="trustedby-logos-inner">
         {companyLogos.concat(companyLogos).map((logo, idx) => (
           <div className="trustedby-logo" key={logo.name + idx}>
-            <img src={logo.url} alt={logo.name + " logo"} />
+            <img src={logo.url} alt={logo.name + " logo"} loading="lazy" />
           </div>
         ))}
       </div>

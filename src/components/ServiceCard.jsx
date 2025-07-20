@@ -12,7 +12,7 @@ const ServiceCard = ({ service, detailed = false }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="service-img">
-        <img src={service.image} alt={service.title} />
+        <img src={service.image} alt={service.title} loading="lazy" />
       </div>
       <div className="service-content">
         <h3>{service.title}</h3>
