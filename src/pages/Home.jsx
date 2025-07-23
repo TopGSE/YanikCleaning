@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaCheck, FaClock, FaShieldAlt, FaLeaf } from "react-icons/fa";
 import ServiceCard from "../components/ServiceCard";
-import TrustedBy from "../components/TrustedBy";
+
 import "./Home.css";
 
 const Home = () => {
@@ -102,9 +102,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Trusted By Section */}
-      <TrustedBy />
     </div>
   );
 };

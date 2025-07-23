@@ -1,3 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+.navbar__brandtext {
+	font-family: 'Montserrat', 'Inter', Arial, sans-serif;
+	font-weight: 300;
+	font-size: 1.35rem;
+	color: #22252b;
+	letter-spacing: 0.08em;
+	margin-left: 1.2rem;
+	user-select: none;
+	text-shadow: 0 1px 8px #fff, 0 0px 8px #e0e7ef;
+	align-items: center;
+	display: none;
+}
+
+@media (max-width: 700px) {
+	.navbar__brandtext {
+		display: flex;
+	}
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {

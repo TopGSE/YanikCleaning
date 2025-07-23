@@ -28,7 +28,6 @@ const ServiceCard = ({ service, detailed = false }) => {
           </div>
         )}
         <div className="service-footer">
-          <span className="service-price">{service.price}</span>
           <Link to="/contact" className="btn btn-small">
             Vraag offerte
           </Link>

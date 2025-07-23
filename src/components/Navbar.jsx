@@ -47,6 +47,10 @@ const Navbar = () => {
             </div>
           </Link>
         </div>
+        {/* Yanik Cleaning Text */}
+        <div className="navbar__brandtext">
+          <span>Yanik Cleaning</span>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="navbar__nav">
