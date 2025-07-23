@@ -22,19 +22,6 @@
 	--transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-body {
-	font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-	line-height: 1.6;
-	color: var(--text-primary);
-	padding-top: var(--navbar-height);
-}
-
 .navbar {
 	position: fixed;
 	top: 0;
@@ -175,12 +162,10 @@ body {
 	width: 80%;
 }
 
-
 .navbar__menu-link:hover {
 	color: var(--primary-color);
 	background: none;
 }
-
 
 .navbar__menu-link--active {
 	color: var(--primary-color);
@@ -234,40 +219,62 @@ body {
 	box-shadow: var(--shadow-lg);
 }
 
-/* Mobile Toggle */
+/* Mobile Toggle - Enhanced Animation */
 .navbar__mobile-toggle {
 	display: none;
 	flex-direction: column;
-	justify-content: space-between;
-	width: 24px;
-	height: 18px;
+	justify-content: center;
+	align-items: center;
+	width: 28px;
+	height: 28px;
 	background: none;
 	border: none;
 	cursor: pointer;
-	padding: 0;
+	padding: 4px;
 	z-index: 1001;
+	border-radius: var(--radius-sm);
+	transition: var(--transition);
+}
+
+.navbar__mobile-toggle:hover {
+	background: rgba(37, 99, 235, 0.05);
 }
 
 .navbar__mobile-toggle-line {
-	width: 100%;
+	width: 20px;
 	height: 2px;
 	background: var(--text-primary);
-	border-radius: 1px;
-	transition: var(--transition);
+	border-radius: 2px;
+	transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 	transform-origin: center;
+	position: relative;
+}
+
+.navbar__mobile-toggle-line:nth-child(1) {
+	margin-bottom: 4px;
+}
+
+.navbar__mobile-toggle-line:nth-child(2) {
+	margin-bottom: 4px;
 }
 
 .navbar__mobile-toggle--active .navbar__mobile-toggle-line:nth-child(1) {
-	transform: rotate(45deg) translate(5px, 5px);
+	transform: rotate(45deg) translateY(6px);
+	background: var(--primary-color);
 }
 
 .navbar__mobile-toggle--active .navbar__mobile-toggle-line:nth-child(2) {
 	opacity: 0;
-	transform: scaleX(0);
+	transform: scaleX(0) rotate(180deg);
 }
 
 .navbar__mobile-toggle--active .navbar__mobile-toggle-line:nth-child(3) {
-	transform: rotate(-45deg) translate(5px, -5px);
+	transform: rotate(-45deg) translateY(-6px);
+	background: var(--primary-color);
+}
+
+.navbar__mobile-toggle--active:hover {
+	background: rgba(37, 99, 235, 0.1);
 }
 
 /* Mobile Menu */
@@ -362,7 +369,6 @@ body {
 	transition: var(--transition);
 }
 
-
 .navbar__mobile-menu-link:hover,
 .navbar__mobile-menu-link--active {
 	background: none;
@@ -439,14 +445,37 @@ body {
 	}
 }
 
-/* Focus styles for accessibility */
+/* Focus and active styles for accessibility */
 .navbar__menu-link:focus,
+.navbar__menu-link:active,
 .navbar__menu-link--active:focus,
 .navbar__cta-btn:focus,
+.navbar__cta-btn:active,
 .navbar__mobile-menu-link:focus,
+.navbar__mobile-menu-link:active,
 .navbar__mobile-cta-btn:focus,
+.navbar__mobile-cta-btn:active,
 .navbar__logo:focus,
-.navbar__mobile-toggle:focus {
+.navbar__logo:active,
+.navbar__mobile-toggle:focus,
+.navbar__mobile-toggle:active {
 	outline: none !important;
 	box-shadow: none !important;
+	background: none !important;
+}
+
+/* Remove tap highlight on mobile */
+.navbar__menu-link,
+.navbar__mobile-menu-link,
+.navbar__cta-btn,
+.navbar__mobile-cta-btn,
+.navbar__logo,
+.navbar__mobile-toggle {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
