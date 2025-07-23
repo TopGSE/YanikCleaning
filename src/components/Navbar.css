@@ -163,12 +163,10 @@
 }
 
 .navbar__menu-link:hover {
-	color: var(--primary-color);
 	background: none;
 }
 
 .navbar__menu-link--active {
-	color: var(--primary-color);
 	background: none;
 	font-weight: 600;
 }
