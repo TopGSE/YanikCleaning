@@ -40,7 +40,8 @@ const Contact = () => {
               <div className="form-header">
                 <h2>Stuur ons een bericht</h2>
                 <p>
-                  Vul het onderstaande formulier in en wij nemen binnen 24 uur contact met u op met een offerte op maat.
+                  Vul het onderstaande formulier in en wij nemen binnen 24 uur
+                  contact met u op met een offerte op maat.
                 </p>
               </div>
               <form onSubmit={handleSubmit} className="modern-contact-form">
@@ -102,8 +103,12 @@ const Contact = () => {
                       <option value="office">Kantoor schoonmaak</option>
                       <option value="commercial">Commerciële schoonmaak</option>
                       <option value="deep">Dieptereiniging</option>
-                      <option value="medical">Medische faciliteit schoonmaak</option>
-                      <option value="school">Onderwijsinstelling schoonmaak</option>
+                      <option value="medical">
+                        Medische faciliteit schoonmaak
+                      </option>
+                      <option value="school">
+                        Onderwijsinstelling schoonmaak
+                      </option>
                       <option value="industrial">Industriële schoonmaak</option>
                     </select>
                   </div>
