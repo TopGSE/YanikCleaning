@@ -38,10 +38,9 @@ const Contact = () => {
           <div className="contact-wrapper" style={{ justifyContent: "center" }}>
             <div className="contact-form-section">
               <div className="form-header">
-                <h2>Send Us a Message</h2>
+                <h2>Stuur ons een bericht</h2>
                 <p>
-                  Fill out the form below and we'll get back to you within 24
-                  hours with a customized quote.
+                  Vul het onderstaande formulier in en wij nemen binnen 24 uur contact met u op met een offerte op maat.
                 </p>
               </div>
               <form onSubmit={handleSubmit} className="modern-contact-form">
@@ -49,28 +48,28 @@ const Contact = () => {
                   <div className="form-group">
                     <label htmlFor="name">
                       <FaUser className="label-icon" />
-                      Full Name *
+                      Volledige naam *
                     </label>
                     <input
                       type="text"
                       id="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="John Doe"
+                      placeholder="Jan Jansen"
                       required
                     />
                   </div>
                   <div className="form-group">
                     <label htmlFor="email">
                       <FaEnvelope className="label-icon" />
-                      Email Address *
+                      E-mailadres *
                     </label>
                     <input
                       type="email"
                       id="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="john@example.com"
+                      placeholder="jan@voorbeeld.com"
                       required
                     />
                   </div>
@@ -79,50 +78,48 @@ const Contact = () => {
                   <div className="form-group">
                     <label htmlFor="phone">
                       <FaPhone className="label-icon" />
-                      Phone Number
+                      Telefoonnummer
                     </label>
                     <input
                       type="tel"
                       id="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="(123) 456-7890"
+                      placeholder="06 12345678"
                     />
                   </div>
                   <div className="form-group">
                     <label htmlFor="service">
                       <FaServicestack className="label-icon" />
-                      Service Type
+                      Soort dienst
                     </label>
                     <select
                       id="service"
                       value={formData.service}
                       onChange={handleChange}
                     >
-                      <option value="">Select a service</option>
-                      <option value="office">Office Cleaning</option>
-                      <option value="commercial">Commercial Cleaning</option>
-                      <option value="deep">Deep Cleaning</option>
-                      <option value="medical">Medical Facility Cleaning</option>
-                      <option value="school">
-                        Educational Facility Cleaning
-                      </option>
-                      <option value="industrial">Industrial Cleaning</option>
+                      <option value="">Kies een dienst</option>
+                      <option value="office">Kantoor schoonmaak</option>
+                      <option value="commercial">Commerciële schoonmaak</option>
+                      <option value="deep">Dieptereiniging</option>
+                      <option value="medical">Medische faciliteit schoonmaak</option>
+                      <option value="school">Onderwijsinstelling schoonmaak</option>
+                      <option value="industrial">Industriële schoonmaak</option>
                     </select>
                   </div>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="message">Message *</label>
+                  <label htmlFor="message">Bericht *</label>
                   <textarea
                     id="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell us about your cleaning needs, square footage, frequency, and any specific requirements..."
+                    placeholder="Vertel ons over uw schoonmaakbehoeften, oppervlakte, frequentie en eventuele specifieke wensen..."
                     required
                   />
                 </div>
                 <button type="submit" className="submit-btn">
-                  <span>Send Message</span>
+                  <span>Verstuur bericht</span>
                   <div className="btn-glow"></div>
                 </button>
               </form>
