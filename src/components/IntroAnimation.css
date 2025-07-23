@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700;900&display=swap');
+
 /* Animated shine/reflection sweep for intro brand letters */
 .shine-sweep {
 	position: absolute;
@@ -63,13 +65,11 @@
 	transition: opacity 0.7s cubic-bezier(.77, 0, .18, 1);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
-
 .intro-animation.ultra-modern {
 	position: fixed;
 	z-index: 9999;
 	inset: 0;
-	background: #1a365d;
+	background: #fff !important;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -82,7 +82,10 @@
 	position: absolute;
 	inset: 0;
 	z-index: 1;
-	background: linear-gradient(135deg, #e3f0ff 0%, #b6d0f7 40%, #6a8bc3 100%);
+	background: transparent !important;
+	box-shadow: none !important;
+	pointer-events: none;
+	z-index: 1;
 	overflow: hidden;
 }
 
@@ -362,10 +365,11 @@
 
 .ultra-yanik {
 	font-size: 4.2rem;
-	font-weight: 900;
-	color: #fff;
-	letter-spacing: 0.18em;
-	text-shadow: 0 4px 24px #1a365d44, 0 1px 0 #fff, 0 0px 16px #c0c0c0;
+	font-weight: 400;
+	font-family: 'Montserrat', 'Inter', Arial, sans-serif;
+	color: #111;
+	letter-spacing: 0.08em;
+	text-shadow: none;
 	font-family: 'Montserrat', 'Inter', Arial, sans-serif;
 	display: flex;
 	gap: 0.08em;
@@ -476,16 +480,7 @@
 }
 
 .ultra-sparkle::before {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
-	width: 32px;
-	height: 32px;
-	background: radial-gradient(circle, #fff 0%, #d4af37 60%, #1a365d00 100%);
+	display: none !important;
 	opacity: 0.7;
 	border-radius: 50%;
 	filter: blur(1.5px);
@@ -892,10 +887,11 @@
 
 .intro-logo-yanik {
 	font-size: 4.2rem;
-	font-weight: 800;
-	color: #00bfae;
-	letter-spacing: 0.18em;
-	text-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+	font-weight: 100;
+	font-family: 'Montserrat', 'Inter', Arial, sans-serif;
+	color: #111;
+	letter-spacing: 0.08em;
+	text-shadow: none;
 	opacity: 0;
 	transform: translateY(30px) scale(0.7);
 	animation: yanikPopUp 0.7s 2.5s cubic-bezier(.68, -0.55, .27, 1.55) forwards;
