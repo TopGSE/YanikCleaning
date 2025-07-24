@@ -1,8 +1,6 @@
-
 import React from "react";
 import { FaCheck, FaClock, FaShieldAlt, FaLeaf } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-
 
 // ServiceCard component with bottom-right CTA button (no page refresh)
 const ServiceCard = ({ service }) => {

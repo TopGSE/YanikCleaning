@@ -7,7 +7,12 @@ import {
   FaServicestack,
 } from "react-icons/fa";
 import { useState } from "react";
+import emailjs from "emailjs-com";
 import "./Contact.css";
+
+const SERVICE_ID = "service_7gsjzdd"; // Updated with your EmailJS service ID
+const TEMPLATE_ID = "template_va8hzws"; // Updated with your EmailJS template ID
+const USER_ID = "jIzolnkaMK56KlX-C"; // Updated with your EmailJS public key (user ID)
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +22,8 @@ const Contact = () => {
     service: "",
     message: "",
   });
+  const [sending, setSending] = useState(false);
+  const [success, setSuccess] = useState(null);
 
   const handleChange = (e) => {
     setFormData({
@@ -27,8 +34,37 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
+    setSending(true);
+    setSuccess(null);
+    emailjs
+      .send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+        },
+        USER_ID
+      )
+      .then(
+        (result) => {
+          setSuccess(true);
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            service: "",
+            message: "",
+          });
+        },
+        (error) => {
+          setSuccess(false);
+        }
+      )
+      .finally(() => setSending(false));
   };
 
   return (
@@ -86,7 +122,7 @@ const Contact = () => {
                       id="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="06 12345678"
+                      placeholder="+32 412345678"
                     />
                   </div>
                   <div className="form-group">
@@ -121,10 +157,20 @@ const Contact = () => {
                     required
                   />
                 </div>
-                <button type="submit" className="submit-btn">
-                  <span>Verstuur bericht</span>
+                <button type="submit" className="submit-btn" disabled={sending}>
+                  <span>{sending ? "Versturen..." : "Verstuur bericht"}</span>
                   <div className="btn-glow"></div>
                 </button>
+                {success === true && (
+                  <div style={{ color: "green", marginTop: "1rem" }}>
+                    Bedankt! Uw bericht is verzonden.
+                  </div>
+                )}
+                {success === false && (
+                  <div style={{ color: "red", marginTop: "1rem" }}>
+                    Er is iets misgegaan. Probeer het later opnieuw.
+                  </div>
+                )}
               </form>
             </div>
           </div>
