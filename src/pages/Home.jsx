@@ -96,7 +96,7 @@ const Home = () => {
             ))}
           </div>
           <div style={{ textAlign: "center", marginTop: "2rem" }}>
-            <Link to="/services" className="btn">
+            <Link to="/services" className="btn btn-gradient">
               Bekijk alle diensten
             </Link>
           </div>

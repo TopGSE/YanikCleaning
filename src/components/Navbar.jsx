@@ -38,18 +38,12 @@ const Navbar = () => {
         {/* Logo Section */}
         <div className="navbar__brand">
           <Link to="/" className="navbar__logo" onClick={closeMobileMenu}>
-            <div className="navbar__logo-icon">
-              <FaBroom />
-            </div>
-            <div className="navbar__logo-text">
-              <span className="navbar__logo-name">Yanik</span>
-              <span className="navbar__logo-tagline">Cleaning</span>
-            </div>
+            <img
+              src="/images/Yanik Cleaning Logo.png"
+              alt="Yanik Cleaning Logo"
+              className="navbar__logo-img"
+            />
           </Link>
-        </div>
-        {/* Yanik Cleaning Text */}
-        <div className="navbar__brandtext">
-          <span>Yanik Cleaning</span>
         </div>
 
         {/* Desktop Navigation */}

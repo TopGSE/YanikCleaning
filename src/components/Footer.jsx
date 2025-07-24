@@ -16,7 +16,17 @@ const Footer = () => {
         <div className="footer-container">
           <div className="footer-about">
             <div className="footer-logo">
-              <FaBroom /> Yanik Cleaning
+              <img
+                src="/images/Yanik Cleaning Logo.png"
+                alt="Yanik Cleaning Logo"
+                className="navbar__logo-img"
+                style={{
+                  height: "48px",
+                  width: "auto",
+                  objectFit: "contain",
+                  background: "transparent",
+                }}
+              />
             </div>
             <p>
               Professionele schoonmaakdiensten voor kantoren en bedrijven. Wij

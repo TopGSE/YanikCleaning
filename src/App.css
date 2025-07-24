@@ -1,3 +1,16 @@
+.btn.btn-gradient {
+	background: linear-gradient(90deg, #1e90ff 60%, #38b6ff 100%);
+	color: #fff;
+	border: none;
+	transition: background 0.18s, box-shadow 0.18s;
+	box-shadow: 0 2px 8px 0 #1e90ff22;
+}
+
+.btn.btn-gradient:hover {
+	background: linear-gradient(90deg, #38b6ff 60%, #1e90ff 100%);
+	box-shadow: 0 4px 16px 0 #1e90ff33;
+}
+
 /* Modern Cleaning Company Website CSS */
 :root {
 	--primary: #00a896;

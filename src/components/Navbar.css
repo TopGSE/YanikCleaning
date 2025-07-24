@@ -1,3 +1,16 @@
+.contact-item {
+	display: flex;
+	align-items: center;
+	gap: 0.6em;
+}
+
+.navbar__logo-img {
+	height: 60px;
+	width: auto;
+	object-fit: contain;
+	background: transparent !important;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 
 .navbar__brandtext {
