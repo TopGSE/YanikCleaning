@@ -1,4 +1,5 @@
 import ServiceCard from "../components/ServiceCard";
+import { Link } from "react-router-dom";
 import {
   FaBuilding,
   FaHome,
@@ -150,18 +151,19 @@ const Services = () => {
             >
               Bekijk al onze diensten
             </a>
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="btn swipe-down"
               style={{
                 fontWeight: 600,
                 fontSize: "1.08rem",
                 background: "#028090",
                 animationDelay: "0.65s",
+                textDecoration: "none",
               }}
             >
               Vraag offerte aan
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -227,13 +229,17 @@ const Services = () => {
             advies
           </p>
           <div style={{ textAlign: "center" }}>
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="btn"
-              style={{ backgroundColor: "white", color: "var(--primary)" }}
+              style={{
+                backgroundColor: "white",
+                color: "var(--primary)",
+                textDecoration: "none",
+              }}
             >
               Vraag gratis offerte aan
-            </a>
+            </Link>
           </div>
         </div>
       </section>

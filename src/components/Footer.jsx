@@ -3,11 +3,11 @@ import {
   FaPhone,
   FaEnvelope,
   FaMapMarkerAlt,
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedin,
+  FaCcMastercard,
+  FaMoneyBillWave,
+  FaCreditCard,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -33,19 +33,56 @@ const Footer = () => {
               leveren uitstekende resultaten met milieuvriendelijke producten en
               getrainde professionals.
             </p>
-            <div className="social-links">
-              <a href="#" className="social-link">
-                <FaFacebook />
-              </a>
-              <a href="#" className="social-link">
-                <FaTwitter />
-              </a>
-              <a href="#" className="social-link">
-                <FaInstagram />
-              </a>
-              <a href="#" className="social-link">
-                <FaLinkedin />
-              </a>
+            <div className="footer-payments" style={{ marginTop: "1.2rem" }}>
+              <span
+                style={{
+                  fontWeight: 600,
+                  fontSize: "1rem",
+                  marginBottom: "0.5rem",
+                  display: "block",
+                }}
+              >
+                Geaccepteerde betaalmethoden:
+              </span>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "1.5rem",
+                  flexWrap: "wrap",
+                  alignItems: "center",
+                }}
+              >
+                <span
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                  }}
+                >
+                  <FaCreditCard size={28} />
+                  Bancontact
+                </span>
+                <span
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                  }}
+                >
+                  <FaCcMastercard size={28} />
+                  Mastercard
+                </span>
+                <span
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                  }}
+                >
+                  <FaMoneyBillWave size={28} />
+                  Cash
+                </span>
+              </div>
             </div>
           </div>
 
@@ -53,19 +90,19 @@ const Footer = () => {
             <h3>Snel naar</h3>
             <ul>
               <li>
-                <a href="/">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="/about">Over ons</a>
+                <Link to="/about">Over ons</Link>
               </li>
               <li>
-                <a href="/services">Diensten</a>
+                <Link to="/services">Diensten</Link>
               </li>
               <li>
-                <a href="/contact">Contact</a>
+                <Link to="/contact">Contact</Link>
               </li>
               <li>
-                <a href="/contact">Offerte aanvragen</a>
+                <Link to="/contact">Offerte aanvragen</Link>
               </li>
             </ul>
           </div>

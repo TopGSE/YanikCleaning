@@ -57,7 +57,7 @@ const Home = () => {
       <section className="hero">
         <video className="hero-video" autoPlay loop muted playsInline>
           <source
-            src="/videos/office-cleaning-video-hero.mp4"
+            src="public/videos/vecteezy_clean-the-floor-using-water-spray_28174846.mp4"
             type="video/mp4"
           />
         </video>

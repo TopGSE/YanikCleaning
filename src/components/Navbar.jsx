@@ -68,7 +68,7 @@ const Navbar = () => {
 
         {/* CTA Button */}
         <div className="navbar__cta">
-          <Link to="/contact" className="navbar__cta-btn">
+          <Link to="/contact" className="navbar__cta-btn btn btn-gradient">
             <span>Offerte aanvragen</span>
           </Link>
         </div>
@@ -125,7 +125,7 @@ const Navbar = () => {
             <div className="navbar__mobile-cta">
               <Link
                 to="/contact"
-                className="navbar__mobile-cta-btn"
+                className="navbar__mobile-cta-btn btn btn-gradient"
                 onClick={closeMobileMenu}
               >
                 Offerte aanvragen

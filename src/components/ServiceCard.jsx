@@ -6,8 +6,7 @@ const ServiceCard = ({ service, detailed = false }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Link
-      to="/contact"
+    <div
       className={`service-card-link`}
       tabIndex={0}
       style={{ textDecoration: "none", color: "inherit" }}
@@ -32,13 +31,17 @@ const ServiceCard = ({ service, detailed = false }) => {
             </div>
           )}
           <div className="service-footer">
-            <span className="btn btn-small" style={{ borderRadius: "5px" }}>
+            <Link
+              to="/contact"
+              className="btn btn-small"
+              style={{ borderRadius: "5px" }}
+            >
               Vraag offerte
-            </span>
+            </Link>
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 
