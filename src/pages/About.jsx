@@ -22,7 +22,7 @@ const About = () => {
           poster="/images/hero-poster.jpg"
         >
           <source
-            src="public/videos/vecteezy_clean-the-floor-using-water-spray_28174846 (1).mp4"
+            src="videos/office-cleaning-video-hero (1).mp4"
             type="video/mp4"
           />
         </video>
