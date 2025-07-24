@@ -21,10 +21,7 @@ const About = () => {
           preload="metadata"
           poster="/images/hero-poster.jpg"
         >
-          <source
-            src="public/videos/vecteezy_clean-the-floor-using-water-spray_28174846.mp4"
-            type="video/mp4"
-          />
+          <source src="videos/office-cleaning-video-hero.mp4" type="video/mp4" />
         </video>
         <div className="hero-content">
           <h1 className="hero-title">Over Yanik Cleaning</h1>
