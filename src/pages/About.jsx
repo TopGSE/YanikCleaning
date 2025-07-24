@@ -65,26 +65,24 @@ const About = () => {
 
       {/* Statistieken Sectie */}
       <section className="section stats">
-        <div className="container">
-          <div className="stats-grid">
-            {stats.map((stat, index) => (
-              <div className="stat-item" key={index}>
-                <div className="stat-icon">{stat.icon}</div>
-                <h3 className="stat-number">{stat.number}</h3>
-                <p className="stat-label">
-                  {stat.label === "Happy Clients"
-                    ? "Tevreden Klanten"
-                    : stat.label === "Years Experience"
-                    ? "Jaar Ervaring"
-                    : stat.label === "Satisfaction Rate"
-                    ? "Tevredenheid"
-                    : stat.label === "Team Members"
-                    ? "Teamleden"
-                    : stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
+        <div className="stats-grid">
+          {stats.map((stat, index) => (
+            <div className="stat-item" key={index}>
+              <div className="stat-icon">{stat.icon}</div>
+              <h3 className="stat-number">{stat.number}</h3>
+              <p className="stat-label">
+                {stat.label === "Happy Clients"
+                  ? "Tevreden Klanten"
+                  : stat.label === "Years Experience"
+                  ? "Jaar Ervaring"
+                  : stat.label === "Satisfaction Rate"
+                  ? "Tevredenheid"
+                  : stat.label === "Team Members"
+                  ? "Teamleden"
+                  : stat.label}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
