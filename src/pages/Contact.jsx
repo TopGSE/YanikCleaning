@@ -102,13 +102,11 @@ const Contact = () => {
                       <option value="">Kies een dienst</option>
                       <option value="office">Kantoor schoonmaak</option>
                       <option value="commercial">Commerciële schoonmaak</option>
-                      <option value="deep">Dieptereiniging</option>
+                      <option value="Oprit">Oprit Reiniging</option>
                       <option value="medical">
                         Medische faciliteit schoonmaak
                       </option>
-                      <option value="school">
-                        Onderwijsinstelling schoonmaak
-                      </option>
+                      <option value="Tuin">Algemene Tuinonderhoud</option>
                       <option value="industrial">Industriële schoonmaak</option>
                     </select>
                   </div>

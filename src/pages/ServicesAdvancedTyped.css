@@ -1,113 +1,256 @@
-.hero.services-hero {
-	min-height: 48vh;
+/* Minimalist Hero Section */
+.minimalist-hero {
+	position: relative;
+	height: 100vh;
+	min-height: 700px;
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	position: relative;
-	background: linear-gradient(120deg, rgba(30, 144, 255, 0.18) 60%, rgba(2, 195, 154, 0.12) 100%), url('/images/vecteezy-foto-4.jpg') center/cover no-repeat;
-	box-shadow: 0 8px 32px 0 rgba(30, 144, 255, 0.12);
+	background: #ffffff;
 	overflow: hidden;
 }
 
-.hero.services-hero::before {
-	content: '';
+.hero-background-minimal {
 	position: absolute;
-	inset: 0;
-	background: linear-gradient(120deg, rgba(0, 168, 150, 0.18) 0%, rgba(2, 195, 154, 0.12) 100%);
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
 	z-index: 1;
 }
 
-.hero.services-hero::after {
+.hero-bg-minimal {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: grayscale(10%) brightness(1.1) contrast(1.1);
+	opacity: 0.8;
+}
+
+.hero-content-minimal {
+	position: relative;
+	z-index: 10;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 3rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	gap: 4rem;
+	min-height: 600px;
+}
+
+.hero-text-block {
+	max-width: 500px;
+	animation: fadeInLeft 1s ease-out;
+}
+
+.hero-label {
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: #028090;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-bottom: 1.5rem;
+	position: relative;
+	padding-left: 30px;
+}
+
+.hero-label::before {
 	content: '';
 	position: absolute;
-	inset: 0;
-	background: rgba(20, 30, 50, 0.38);
-	z-index: 2;
-	pointer-events: none;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 2px;
+	background: #028090;
 }
 
-.hero-content.services-hero-content {
-	position: relative;
-	z-index: 2;
-	background: rgba(255, 255, 255, 0.82);
-	border-radius: 2rem;
-	box-shadow: 0 4px 32px 0 rgba(30, 144, 255, 0.10);
-	padding: 2.5rem 2.5rem 2rem 2.5rem;
-	max-width: 600px;
-	margin: 2.5rem auto;
-	text-align: center;
-	backdrop-filter: blur(6px);
+.hero-title-minimal {
+	font-size: 4.5rem;
+	font-weight: 300;
+	line-height: 1;
+	color: #1a1a1a;
+	margin-bottom: 2rem;
+	font-family: 'Inter', 'Segoe UI', sans-serif;
+	letter-spacing: -2px;
 }
 
-.advanced-typed-title {
-	font-size: 2.7rem;
-	font-weight: 700;
-	text-align: center;
-	margin-bottom: 1.2rem;
-	letter-spacing: 0.01em;
-	position: relative;
-	animation: fadeInScale 1.2s cubic-bezier(.4, 1.4, .6, 1) both;
+.hero-subtitle-minimal {
+	font-size: 1.3rem;
+	color: #666666;
+	font-weight: 400;
+	line-height: 1.5;
+	margin-bottom: 3rem;
+	max-width: 400px;
 }
 
-.typed-outer {
+.hero-buttons-minimal {
+	display: flex;
+	gap: 1.5rem;
+	align-items: center;
+}
+
+.btn-minimal {
 	display: inline-block;
-	min-height: 3.2rem;
+	padding: 1rem 0;
+	font-weight: 500;
+	font-size: 1rem;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	position: relative;
+	min-width: 140px;
+	text-align: left;
 }
 
-.typed-main {
-	transition: color 0.4s, text-shadow 0.4s;
-	color: var(--primary-dark, #1a237e);
-	text-shadow: 0 2px 12px rgba(30, 144, 255, 0.08);
+.btn-minimal.primary {
+	color: #1a1a1a;
+	border-bottom: 2px solid #1a1a1a;
 }
 
-.typed-main.highlight {
-	color: #00bcd4;
-	text-shadow: 0 2px 16px rgba(0, 188, 212, 0.18);
+.btn-minimal.primary:hover {
+	color: #028090;
+	border-bottom-color: #028090;
 }
 
-.typed-main.accent {
-	color: #43a047;
-	text-shadow: 0 2px 16px rgba(67, 160, 71, 0.18);
+.btn-minimal.secondary {
+	color: #666666;
+	padding-left: 20px;
 }
 
-.typed-main.pulse {
-	color: #ff9800;
-	animation: pulseColor 1.2s infinite alternate;
+.btn-minimal.secondary::before {
+	content: '→';
+	position: absolute;
+	left: 0;
+	transition: transform 0.3s ease;
 }
 
-.swipe-down {
-	opacity: 0;
-	transform: translateY(-40px);
-	animation: swipeDown 1.1s cubic-bezier(.4, 1.4, .6, 1) 0.2s forwards;
+.btn-minimal.secondary:hover {
+	color: #1a1a1a;
+	padding-left: 25px;
 }
 
-@keyframes fadeInScale {
-	0% {
-		opacity: 0;
-		transform: scale(0.92) translateY(20px);
-	}
+.btn-minimal.secondary:hover::before {
+	transform: translateX(5px);
+}
 
+.hero-image-section {
+	position: relative;
+	height: 400px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.hero-accent-dot {
+	width: 8px;
+	height: 8px;
+	background: #028090;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: pulseDot 3s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+
+	0%,
 	100% {
+		transform: translate(-50%, -50%) scale(1);
 		opacity: 1;
-		transform: scale(1) translateY(0);
+	}
+
+	50% {
+		transform: translate(-50%, -50%) scale(3);
+		opacity: 0.3;
 	}
 }
 
-@keyframes pulseColor {
-	0% {
-		text-shadow: 0 2px 16px rgba(255, 152, 0, 0.12);
-		color: #ff9800;
+@keyframes fadeInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-30px);
 	}
 
-	100% {
-		text-shadow: 0 4px 32px rgba(255, 152, 0, 0.32);
-		color: #ffb300;
-	}
-}
-
-@keyframes swipeDown {
 	to {
 		opacity: 1;
-		transform: translateY(0);
+		transform: translateX(0);
+	}
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+	.hero-content-minimal {
+		padding: 0 2rem;
+		gap: 3rem;
+	}
+
+	.hero-title-minimal {
+		font-size: 3.5rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.minimalist-hero {
+		min-height: 600px;
+	}
+
+	.hero-background-minimal {
+		width: 100%;
+		opacity: 0.1;
+	}
+
+	.hero-content-minimal {
+		grid-template-columns: 1fr;
+		gap: 2rem;
+		text-align: center;
+		padding: 2rem 1.5rem;
+	}
+
+	.hero-title-minimal {
+		font-size: 3rem;
+		letter-spacing: -1px;
+	}
+
+	.hero-subtitle-minimal {
+		font-size: 1.2rem;
+		max-width: none;
+	}
+
+	.hero-buttons-minimal {
+		justify-content: center;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.btn-minimal {
+		text-align: center;
+		min-width: 200px;
+	}
+
+	.hero-image-section {
+		height: 200px;
+	}
+
+	.hero-label {
+		text-align: center;
+		padding-left: 0;
+	}
+
+	.hero-label::before {
+		display: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.hero-title-minimal {
+		font-size: 2.5rem;
+	}
+
+	.hero-content-minimal {
+		padding: 1.5rem 1rem;
 	}
 }

@@ -111,59 +111,38 @@ const Services = () => {
 
   return (
     <div className="services-page">
-      {/* Hero Section */}
-      <section
-        className="hero services-hero"
-        style={{ backgroundImage: "url(/images/vecteezy-foto-4.jpg)" }}
-      >
-        <div className="hero-content services-hero-content">
-          <h1 className="hero-title advanced-typed-title swipe-down">
-            Onze Diensten
-          </h1>
-          <p
-            className="hero-subtitle swipe-down"
-            style={{
-              fontSize: "1.25rem",
-              color: "#028090",
-              marginBottom: "1.2rem",
-              fontWeight: 500,
-              animationDelay: "0.35s",
-            }}
-          >
-            Schoonmaakoplossingen op maat voor elk bedrijf
-          </p>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              gap: "1.2rem",
-              marginTop: "1.2rem",
-            }}
-          >
-            <a
-              href="#services"
-              className="btn btn-gradient swipe-down"
-              style={{
-                fontWeight: 600,
-                fontSize: "1.08rem",
-                animationDelay: "0.5s",
-              }}
-            >
-              Bekijk al onze diensten
-            </a>
-            <Link
-              to="/contact"
-              className="btn swipe-down"
-              style={{
-                fontWeight: 600,
-                fontSize: "1.08rem",
-                background: "#028090",
-                animationDelay: "0.65s",
-                textDecoration: "none",
-              }}
-            >
-              Vraag offerte aan
-            </Link>
+      {/* Minimalist Hero Section */}
+      <section className="minimalist-hero">
+        <div className="hero-background-minimal">
+          <img
+            src="/images/vecteezy-foto-4.jpg"
+            alt="Background"
+            className="hero-bg-minimal"
+          />
+        </div>
+
+        <div className="hero-content-minimal">
+          <div className="hero-text-block">
+            <div className="hero-label">Premium Schoonmaakdiensten</div>
+
+            <h1 className="hero-title-minimal">Onze Diensten</h1>
+
+            <p className="hero-subtitle-minimal">
+              Schoonmaakoplossingen op maat voor elk bedrijf
+            </p>
+
+            <div className="hero-buttons-minimal">
+              <a href="#services" className="btn-minimal primary">
+                Bekijk diensten
+              </a>
+              <Link to="/contact" className="btn-minimal secondary">
+                Offerte aanvragen
+              </Link>
+            </div>
+          </div>
+
+          <div className="hero-image-section">
+            <div className="hero-accent-dot"></div>
           </div>
         </div>
       </section>

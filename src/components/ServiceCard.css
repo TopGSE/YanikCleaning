@@ -30,9 +30,10 @@
 }
 
 /* ServiceCard Professional Modern Styles */
+/* Modern border radius for service cards */
 .service-card {
 	background: linear-gradient(120deg, #fafdff 60%, #e6f2ff 100%);
-	border-radius: 0;
+	border-radius: 1.2rem;
 	box-shadow: 0 6px 32px 0 #1e90ff18, 0 2px 8px 0 #0001;
 	overflow: hidden;
 	transition: transform 0.18s cubic-bezier(.4, 2, .6, 1), box-shadow 0.18s;
