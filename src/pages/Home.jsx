@@ -56,19 +56,14 @@ const Home = () => {
       {/* Hero Section */}
       <section className="hero">
         <video className="hero-video" autoPlay loop muted playsInline>
-          <source
-            src="public/videos/vecteezy_clean-the-floor-using-water-spray_28174846.mp4"
-            type="video/mp4"
-          />
+          <source src="public/videos/office-cleaning-video-hero.mp4" />
         </video>
         <div className="hero-content">
           <h1 className="hero-title">
             {typedTitle}
             <span className="typewriter-cursor">|</span>
           </h1>
-          <p className="hero-subtitle">
-            Milieuvriendelijke schoonmaakoplossingen voor kantoren en bedrijven
-          </p>
+          <p className="hero-subtitle">Uw ruimte, onze zorg altijd kraaknet!</p>
           <div className="hero-btns">
             <Link to="/contact" className="btn btn-gradient">
               Vraag een gratis offerte aan
