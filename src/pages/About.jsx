@@ -11,125 +11,98 @@ const About = () => {
   return (
     <div className="about-page">
       {/* Hero Section */}
-      <section
-        className="hero about-hero"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(30,144,255,0.25),rgba(0,0,0,0.35)), url(/images/about-hero.jpg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          color: "#fff",
-          minHeight: "340px",
-          display: "flex",
-          alignItems: "center",
-          position: "relative",
-        }}
-      >
-        <div
-          className="hero-content"
-          style={{
-            position: "relative",
-            zIndex: 2,
-            textAlign: "center",
-            width: "100%",
-          }}
-        >
-          <h1
-            className="hero-title"
-            style={{
-              fontSize: "2.7rem",
-              fontWeight: 800,
-              letterSpacing: ".01em",
-              marginBottom: "1.1rem",
-              textShadow: "0 4px 24px #0007",
-            }}
-          >
-            Maak kennis met Yanik Cleaning
-          </h1>
-          <p
-            className="hero-subtitle"
-            style={{
-              fontSize: "1.25rem",
-              fontWeight: 500,
-              opacity: 0.93,
-              textShadow: "0 2px 8px #0005",
-            }}
-          >
+      <section className="hero">
+        <video className="hero-video" autoPlay loop muted playsInline>
+          <source src="public/videos/vecteezy_clean-the-floor-using-water-spray_28174846.mp4" />
+        </video>
+        <div className="hero-content">
+          <h1 className="hero-title">Over Yanik Cleaning</h1>
+          <p className="hero-subtitle">
             Betrouwbaar. Duurzaam. Toegewijd aan kwaliteit.
           </p>
         </div>
       </section>
 
-      {/* Our Story Section */}
+      {/* Ons verhaal sectie */}
       <section className="section">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Our Story</h2>
+            <h2 className="section-title">Ons Verhaal</h2>
             <p className="section-subtitle">
-              How we became Toronto's trusted cleaning service
+              Hoe wij uitgegroeid zijn tot dé betrouwbare schoonmaakpartner in
+              Gent
             </p>
           </div>
 
           <div className="about-story">
             <p>
-              Founded in 2010, Yanik Cleaning started as a small local business
-              with just three team members and a passion for cleanliness. What
-              began as residential cleaning services quickly expanded to
-              commercial spaces as we earned a reputation for reliability and
-              attention to detail.
+              Yanik Cleaning werd opgericht in 2023 als een klein familiebedrijf
+              met slechts twee teamleden en een passie voor netheid. Wat begon
+              als schoonmaak bij particulieren groeide al snel uit tot
+              professionele diensten voor bedrijven dankzij onze betrouwbaarheid
+              en oog voor detail.
             </p>
             <p>
-              Today, we're proud to serve over 200 businesses across the Greater
-              Toronto Area with a team of 50+ trained professionals. Despite our
-              growth, we maintain our commitment to personalized service and
-              eco-friendly practices.
+              Vandaag bedienen we met trots meer dan 20 bedrijven in Gent en
+              omgeving met een team van 10 getrainde professionals. Ondanks onze
+              groei blijven we inzetten op persoonlijke service en
+              milieuvriendelijke werkwijzen.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="section stats" style={{ backgroundColor: "#f8f9fa" }}>
+      {/* Statistieken Sectie */}
+      <section className="section stats">
         <div className="container">
           <div className="stats-grid">
             {stats.map((stat, index) => (
               <div className="stat-item" key={index}>
                 <div className="stat-icon">{stat.icon}</div>
                 <h3 className="stat-number">{stat.number}</h3>
-                <p className="stat-label">{stat.label}</p>
+                <p className="stat-label">
+                  {stat.label === "Happy Clients"
+                    ? "Tevreden Klanten"
+                    : stat.label === "Years Experience"
+                    ? "Jaar Ervaring"
+                    : stat.label === "Satisfaction Rate"
+                    ? "Tevredenheid"
+                    : stat.label === "Team Members"
+                    ? "Teamleden"
+                    : stat.label}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Team Sectie */}
       <section className="section team">
         <div className="container">
-          <h2 className="section-title">Meet Our Team</h2>
+          <h2 className="section-title">Ons Team</h2>
           <p className="section-subtitle">
-            Professional, trained, and dedicated to your satisfaction
+            Professioneel, getraind en toegewijd aan uw tevredenheid
           </p>
 
-          <div className="team-grid">
-            {/* Team member cards would go here */}
-          </div>
+          <div className="team-grid">{/* Teamleden kaarten komen hier */}</div>
         </div>
       </section>
 
-      {/* Mission Section */}
+      {/* Missie Sectie */}
       <section
         className="section mission"
         style={{ backgroundColor: "#e9f5f4" }}
       >
         <div className="container">
           <div className="mission-content">
-            <h2 className="section-title">Our Mission</h2>
+            <h2 className="section-title">Onze Missie</h2>
             <p>
-              To provide exceptional cleaning services that enhance our clients'
-              environments while using sustainable practices that protect our
-              planet. We believe a clean space promotes productivity, health,
-              and well-being.
+              Wij bieden uitzonderlijke schoonmaakdiensten die bijdragen aan een
+              gezonde en productieve omgeving voor onze klanten. Daarbij werken
+              we met duurzame methodes die het milieu beschermen. Wij geloven
+              dat een schone ruimte bijdraagt aan welzijn, gezondheid en
+              werkplezier.
             </p>
           </div>
         </div>

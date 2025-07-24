@@ -47,6 +47,70 @@
 	--transition: all 0.3s ease;
 }
 
+/* Stats Section Contrast & Layout Fix */
+.stats {
+	background: linear-gradient(90deg, #1e90ff 60%, #38b6ff 100%);
+	color: var(--white);
+	padding: 4rem 0;
+}
+
+.stats-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: 2rem;
+	width: 100%;
+	margin: 0;
+}
+
+.stat-item {
+	min-width: 320px;
+	max-width: 100%;
+	margin: 0 auto;
+	background: rgba(0, 0, 0, 0.18);
+	color: var(--white);
+	border-radius: 12px;
+	box-shadow: var(--shadow);
+	padding: 2rem 1rem;
+	text-align: center;
+	transition: background 0.2s;
+	width: 20rem;
+}
+
+.stat-item:hover {
+	background: rgba(0, 0, 0, 0.32);
+}
+
+.stat-icon {
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+	color: var(--secondary);
+}
+
+.stat-number {
+	font-size: 2.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	color: var(--white);
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.stat-label {
+	font-size: 1.1rem;
+	color: var(--secondary);
+	opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+	.stats-grid {
+		grid-template-columns: 1fr;
+		gap: 1.2rem;
+	}
+
+	.stat-item {
+		min-width: 0;
+	}
+}
+
 /* Base Styles */
 * {
 	margin: 0;
@@ -64,6 +128,32 @@ body {
 	color: #333;
 	background-color: var(--light);
 	overflow-x: hidden;
+}
+
+.section.team .section-title,
+.section.team .section-subtitle,
+.section.mission .section-title,
+.section.mission .section-subtitle {
+	font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
+	font-weight: 600;
+	letter-spacing: 0.01em;
+	color: #1a2a3a;
+	text-align: center;
+	padding: 0.5rem 0 1.5rem 0;
+}
+
+.section.team .section-title,
+.section.mission .section-title {
+	font-size: 2.4rem;
+	text-shadow: 0 2px 12px rgba(30, 144, 255, 0.08);
+	margin-bottom: 0.7rem;
+}
+
+.section.team .section-subtitle,
+.section.mission .section-subtitle {
+	font-size: 1.25rem;
+	opacity: 0.92;
+	margin-bottom: 1.2rem;
 }
 
 h1,
@@ -211,6 +301,10 @@ ul {
 .about-img img {
 	width: 100%;
 	height: auto;
+	font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+	font-weight: 600;
+	letter-spacing: 0.01em;
+	color: #1a2a3a;
 	display: block;
 	transition: var(--transition);
 }
