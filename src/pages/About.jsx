@@ -12,20 +12,20 @@ const About = () => {
     <div className="about-page">
       {/* Hero Section */}
       <section className="hero">
-        <video
-          className="hero-video"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          poster="/images/hero-poster.jpg"
-        >
-          <source
-            src="videos/office-cleaning-video-hero (1).mp4"
-            type="video/mp4"
-          />
-        </video>
+        <img
+          src="/images/vecteezy-foto-2.jpg"
+          alt="Over Yanik Cleaning Hero"
+          className="hero-image"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            zIndex: -1,
+          }}
+        />
         <div className="hero-content">
           <h1 className="hero-title">Over Yanik Cleaning</h1>
           <p className="hero-subtitle">
