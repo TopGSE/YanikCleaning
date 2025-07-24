@@ -7,7 +7,6 @@ import {
   FaSchool,
   FaIndustry,
 } from "react-icons/fa";
-import { Typewriter } from "react-simple-typewriter";
 import "./ServicesAdvancedTyped.css";
 
 const Services = () => {
@@ -113,31 +112,57 @@ const Services = () => {
     <div className="services-page">
       {/* Hero Section */}
       <section
-        className="hero"
+        className="hero services-hero"
         style={{ backgroundImage: "url(/images/vecteezy-foto-4.jpg)" }}
       >
-        <div className="hero-content">
-          <h1 className="hero-title advanced-typed-title">
-            <span className="typed-outer">
-              <Typewriter
-                words={[
-                  "Onze Diensten",
-                  "Professionele Schoonmaak",
-                  "Altijd een Schone Werkplek",
-                  "Voor Elk Bedrijf een Oplossing",
-                ]}
-                loop={0}
-                cursor
-                cursorStyle="|"
-                typeSpeed={55}
-                deleteSpeed={30}
-                delaySpeed={1200}
-              />
-            </span>
+        <div className="hero-content services-hero-content">
+          <h1 className="hero-title advanced-typed-title swipe-down">
+            Onze Diensten
           </h1>
-          <p className="hero-subtitle">
+          <p
+            className="hero-subtitle swipe-down"
+            style={{
+              fontSize: "1.25rem",
+              color: "#028090",
+              marginBottom: "1.2rem",
+              fontWeight: 500,
+              animationDelay: "0.35s",
+            }}
+          >
             Schoonmaakoplossingen op maat voor elk bedrijf
           </p>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "1.2rem",
+              marginTop: "1.2rem",
+            }}
+          >
+            <a
+              href="#services"
+              className="btn btn-gradient swipe-down"
+              style={{
+                fontWeight: 600,
+                fontSize: "1.08rem",
+                animationDelay: "0.5s",
+              }}
+            >
+              Bekijk al onze diensten
+            </a>
+            <a
+              href="/contact"
+              className="btn swipe-down"
+              style={{
+                fontWeight: 600,
+                fontSize: "1.08rem",
+                background: "#028090",
+                animationDelay: "0.65s",
+              }}
+            >
+              Vraag offerte aan
+            </a>
+          </div>
         </div>
       </section>
 
