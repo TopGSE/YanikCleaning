@@ -1,6 +1,6 @@
 import React from "react";
 import { FaCheck, FaClock, FaShieldAlt, FaLeaf } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 // ServiceCard component with bottom-right CTA button (no page refresh)
 const ServiceCard = ({ service }) => {
@@ -395,9 +395,9 @@ const Home = () => {
             ))}
           </div>
           <div style={{ textAlign: "center", marginTop: "2rem" }}>
-            <a href="/services" className="btn btn-gradient">
+            <Link to="/services" className="btn btn-gradient">
               Bekijk alle diensten
-            </a>
+            </Link>
           </div>
         </div>
       </section>
