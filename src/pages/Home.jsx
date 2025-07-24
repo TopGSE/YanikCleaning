@@ -107,7 +107,7 @@ const Home = () => {
 
   return (
     <div className="homepage">
-      <style jsx>{`
+      <style>{`
         .promo-fab {
           position: fixed;
           left: 2.2rem;
