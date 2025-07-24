@@ -65,7 +65,7 @@ const Home = () => {
           poster="/images/hero-poster.jpg"
         >
           <source
-            src="videos/office-cleaning-video-hero.mp4"
+            src="videos/office-cleaning-video-hero (1).mp4"
             type="video/mp4"
           />
         </video>
