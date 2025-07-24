@@ -1,9 +1,24 @@
+/* Make the whole card clickable */
+.service-card-link {
+	display: block;
+	cursor: pointer;
+	outline: none;
+	border-radius: 0;
+	transition: box-shadow 0.18s, border 0.18s;
+}
+
+.service-card-link:focus .service-card,
+.service-card-link:hover .service-card {
+	box-shadow: 0 16px 48px 0 #1e90ff33, 0 6px 20px 0 #0002;
+	border-color: #2563eb;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Montserrat:wght@400;700&display=swap');
 
 /* ServiceCard Professional Modern Styles */
 .service-card {
 	background: linear-gradient(120deg, #fafdff 60%, #e6f2ff 100%);
-	border-radius: 2rem;
+	border-radius: 0;
 	box-shadow: 0 6px 32px 0 #1e90ff18, 0 2px 8px 0 #0001;
 	overflow: hidden;
 	transition: transform 0.18s cubic-bezier(.4, 2, .6, 1), box-shadow 0.18s;
@@ -27,8 +42,8 @@
 	width: 100%;
 	height: 170px;
 	overflow: hidden;
-	border-top-left-radius: 2rem;
-	border-top-right-radius: 2rem;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 	background: #f4f8fb;
 	display: flex;
 	align-items: center;
@@ -55,7 +70,7 @@
 	flex-direction: column;
 	flex: 1;
 	background: rgba(255, 255, 255, 0.92);
-	border-radius: 1.3rem;
+	border-radius: 0;
 	box-shadow: 0 2px 12px 0 #1e90ff0a;
 	font-family: 'Inter', 'Montserrat', Arial, sans-serif;
 	transition: box-shadow 0.18s;
@@ -94,7 +109,7 @@
 	font-size: 1.13rem;
 	background: #e6f2ff;
 	padding: 0.45rem 1.2rem;
-	border-radius: 1.2rem;
+	border-radius: 0;
 	box-shadow: 0 1.5px 6px 0 #1e90ff11;
 	letter-spacing: 0.01em;
 }
@@ -102,7 +117,7 @@
 .btn.btn-small {
 	font-size: 1.01rem;
 	padding: 0.5rem 0.7rem;
-	border-radius: 1.3rem;
+	border-radius: 0;
 	background: linear-gradient(90deg, #1e90ff 60%, #38b6ff 100%);
 	color: #fff;
 	border: none;
@@ -132,7 +147,7 @@
 	.service-card {
 		min-width: 0;
 		max-width: 100%;
-		border-radius: 1.2rem;
+		border-radius: 0;
 	}
 
 	.service-content {
@@ -141,7 +156,7 @@
 
 	.service-img {
 		height: 110px;
-		border-top-left-radius: 1.2rem;
-		border-top-right-radius: 1.2rem;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
 	}
 }

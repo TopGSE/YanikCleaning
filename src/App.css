@@ -239,7 +239,7 @@ ul {
 
 .service-card {
 	background: var(--white);
-	border-radius: 10px;
+	border-radius: 0;
 	overflow: hidden;
 	box-shadow: var(--shadow);
 	transition: var(--transition);

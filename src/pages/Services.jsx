@@ -14,97 +14,97 @@ const Services = () => {
   const allServices = [
     {
       id: 1,
-      title: "Office Cleaning",
+      title: "Kantoorschoonmaak",
       description:
-        "Daily, weekly, or monthly cleaning tailored to your business needs.",
+        "Dagelijkse, wekelijkse of maandelijkse schoonmaak op maat voor uw bedrijf.",
       price: "$150+",
       icon: <FaBuilding />,
       image: "/images/vecteezy-foto-3.jpg",
       details: [
-        "Dusting and wiping all surfaces",
-        "Vacuuming and mopping floors",
-        "Sanitizing high-touch areas",
-        "Emptying trash and recycling",
-        "Restroom cleaning and restocking",
+        "Stoffen en afnemen van alle oppervlakken",
+        "Stofzuigen en dweilen van vloeren",
+        "Desinfecteren van contactpunten",
+        "Vuilnis en recycling legen",
+        "Sanitair schoonmaken en bijvullen",
       ],
     },
     {
       id: 2,
-      title: "Commercial Cleaning",
+      title: "Commerciële Schoonmaak",
       description:
-        "Complete cleaning solutions for retail spaces, restaurants, and more.",
+        "Complete schoonmaakoplossingen voor winkels, restaurants en meer.",
       price: "$200+",
       icon: <FaStore />,
       image: "/images/vecteezy-foto-4.jpg",
       details: [
-        "Floor care and maintenance",
-        "Window and glass cleaning",
-        "Kitchen and food service area cleaning",
-        "High-dusting and light fixture cleaning",
-        "Specialized surface cleaning",
+        "Vloeronderhoud en reiniging",
+        "Ramen en glaswerk schoonmaken",
+        "Keuken en horeca schoonmaak",
+        "Hoog stof afnemen en armaturen reinigen",
+        "Gespecialiseerde oppervlaktereiniging",
       ],
     },
     {
       id: 3,
-      title: "Deep Cleaning",
+      title: "Dieptereiniging",
       description:
-        "Thorough cleaning for move-ins, move-outs, or seasonal refreshes.",
+        "Grondige schoonmaak voor verhuizingen, opleveringen of seizoensonderhoud.",
       price: "$300+",
       icon: <FaHome />,
       image: "/images/vecteezy-foto-1.jpg",
       details: [
-        "Detailed cleaning of all areas",
-        "Grout and tile cleaning",
-        "Appliance cleaning inside and out",
-        "Baseboard and trim cleaning",
-        "Behind and under furniture cleaning",
+        "Dieptereiniging van alle ruimtes",
+        "Reinigen van voegen en tegels",
+        "Apparatuur binnen en buiten reinigen",
+        "Plinten en randen schoonmaken",
+        "Achter en onder meubels reinigen",
       ],
     },
     {
       id: 4,
-      title: "Medical Facility Cleaning",
+      title: "Medische Faciliteit Reiniging",
       description:
-        "Specialized cleaning for clinics, dental offices, and medical centers.",
+        "Gespecialiseerde schoonmaak voor klinieken, tandartspraktijken en medische centra.",
       price: "$250+",
       icon: <FaHospital />,
       image: "/images/vecteezy-foto-6.jpg",
       details: [
-        "HIPAA-compliant procedures",
-        "Medical waste disposal",
-        "High-level disinfection",
-        "Biohazard cleaning protocols",
-        "Strict compliance with health regulations",
+        "Privacy- en veiligheidsprotocollen",
+        "Medisch afval afvoeren",
+        "Desinfectie op hoog niveau",
+        "Biohazard schoonmaakprotocollen",
+        "Strikte naleving van gezondheidsregels",
       ],
     },
     {
       id: 5,
-      title: "Educational Facility Cleaning",
-      description: "Safe and thorough cleaning for schools and universities.",
+      title: "Onderwijsinstelling Reiniging",
+      description:
+        "Veilige en grondige schoonmaak voor scholen en universiteiten.",
       price: "$180+",
       icon: <FaSchool />,
       image: "/images/vecteezy-foto-5.jpg",
       details: [
-        "Classroom cleaning and sanitizing",
-        "Locker room and gym cleaning",
-        "Cafeteria and food service area cleaning",
-        "Restroom deep cleaning",
-        "Special attention to high-touch areas",
+        "Klaslokalen schoonmaken en desinfecteren",
+        "Kleedkamers en gymzalen reinigen",
+        "Kantine en horeca schoonmaak",
+        "Sanitair dieptereinigen",
+        "Extra aandacht voor contactpunten",
       ],
     },
     {
       id: 6,
-      title: "Industrial Cleaning",
-      description:
-        "Heavy-duty cleaning for warehouses and manufacturing facilities.",
+      title: "Industriële Reiniging",
+      description: "Zware schoonmaak voor magazijnen en productieomgevingen.",
       price: "$350+",
       icon: <FaIndustry />,
       image: "/images/vecteezy-foto-2.jpg",
       details: [
-        "Equipment and machinery cleaning",
-        "High bay and floor cleaning",
-        "Dust and debris removal",
-        "Pressure washing services",
-        "Specialized industrial cleaning solutions",
+        "Reiniging van machines en apparatuur",
+        "Hoogwerkers en vloeren reinigen",
+        "Stof en vuil verwijderen",
+        "Hogedrukreiniging",
+        "Gespecialiseerde industriële oplossingen",
       ],
     },
   ];
@@ -136,7 +136,7 @@ const Services = () => {
             </span>
           </h1>
           <p className="hero-subtitle">
-            Tailored cleaning solutions for every business need
+            Schoonmaakoplossingen op maat voor elk bedrijf
           </p>
         </div>
       </section>
@@ -144,13 +144,13 @@ const Services = () => {
       {/* All Services Section */}
       <section className="section services">
         <div className="container">
-          <h2 className="section-title">Comprehensive Cleaning Services</h2>
+          <h2 className="section-title">Uitgebreide Schoonmaakdiensten</h2>
           <p
             className="section-subtitle"
             style={{ textAlign: "center", marginBottom: "3rem" }}
           >
-            We offer a wide range of professional cleaning services to keep your
-            business spotless
+            Wij bieden een breed scala aan professionele schoonmaakdiensten om
+            uw bedrijf vlekkeloos te houden
           </p>
 
           <div className="services-container">
@@ -167,12 +167,12 @@ const Services = () => {
         style={{ backgroundColor: "#f8f9fa" }}
       >
         <div className="container">
-          <h2 className="section-title">Our Process</h2>
+          <h2 className="section-title">Ons Proces</h2>
           <p
             className="section-subtitle"
             style={{ textAlign: "center", marginBottom: "3rem" }}
           >
-            How we ensure your space is perfectly cleaned every time
+            Hoe wij zorgen voor een perfect schoon resultaat, elke keer weer
           </p>
 
           <div className="process-steps">
@@ -191,12 +191,15 @@ const Services = () => {
         }}
       >
         <div className="container">
-          <h2 className="section-title">Ready for a Spotless Space?</h2>
+          <h2 className="section-title">
+            Klaar voor een brandschone werkplek?
+          </h2>
           <p
             className="section-subtitle"
             style={{ textAlign: "center", marginBottom: "2rem", opacity: 0.9 }}
           >
-            Contact us today to discuss your cleaning needs and get a free quote
+            Neem vandaag nog contact met ons op voor een gratis offerte of
+            advies
           </p>
           <div style={{ textAlign: "center" }}>
             <a
@@ -204,7 +207,7 @@ const Services = () => {
               className="btn"
               style={{ backgroundColor: "white", color: "var(--primary)" }}
             >
-              Get Your Free Quote
+              Vraag gratis offerte aan
             </a>
           </div>
         </div>

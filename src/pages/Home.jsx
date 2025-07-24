@@ -12,7 +12,6 @@ const Home = () => {
       title: "Kantoorschoonmaak",
       description:
         "Dagelijkse, wekelijkse of maandelijkse schoonmaak op maat voor uw bedrijf.",
-      price: "vanaf €150",
       image: "/images/vecteezy-foto-3.jpg",
     },
     {
@@ -20,15 +19,13 @@ const Home = () => {
       title: "Commerciële Schoonmaak",
       description:
         "Complete schoonmaakoplossingen voor winkels, restaurants en meer.",
-      price: "vanaf €200",
       image: "/images/vecteezy-foto-4.jpg",
     },
     {
       id: 3,
-      title: "Dieptereiniging",
+      title: "Algemene Tuinonderhoud",
       description:
-        "Grondige schoonmaak voor verhuizingen, opleveringen of seizoenswerk.",
-      price: "vanaf €300",
+        "Grondige schoonmaak van uw tuin inclusief snoeien, grasmaaien en onderhoud.",
       image: "/images/vecteezy-foto-1.jpg",
     },
   ];
