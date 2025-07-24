@@ -26,7 +26,7 @@ const Home = () => {
       title: "Algemene Tuinonderhoud",
       description:
         "Grondige schoonmaak van uw tuin inclusief snoeien, grasmaaien en onderhoud.",
-      image: "/images/vecteezy-foto-1.jpg",
+      image: "/images/vecteezy-foto-8.jpg",
     },
   ];
 
