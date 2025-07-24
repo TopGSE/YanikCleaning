@@ -119,7 +119,7 @@ ul {
 
 /* Hero Section */
 .hero {
-	height: 100vh;
+	height: 85vh;
 	min-height: 600px;
 	display: flex;
 	align-items: center;
