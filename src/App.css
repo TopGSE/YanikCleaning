@@ -1,3 +1,25 @@
+/* Footer Contact Items */
+.footer-contact {
+	display: flex;
+	flex-direction: column;
+	gap: 0.8rem;
+}
+
+.footer-contact .contact-item {
+	display: flex;
+	align-items: center;
+	gap: 0.7rem;
+	font-size: 1rem;
+	color: #fff;
+	opacity: 0.85;
+	text-shadow: none;
+}
+
+.footer-contact .contact-icon {
+	font-size: 1.1rem;
+	color: var(--primary);
+}
+
 .btn.btn-gradient {
 	background: linear-gradient(90deg, #1e90ff 60%, #38b6ff 100%);
 	color: #fff;
@@ -243,6 +265,15 @@ ul {
 	overflow: hidden;
 	box-shadow: var(--shadow);
 	transition: var(--transition);
+	min-height: 480px;
+	display: flex;
+	flex-direction: column;
+}
+
+.service-footer {
+	margin-top: auto;
+	display: flex;
+	justify-content: flex-end;
 }
 
 .service-card:hover {

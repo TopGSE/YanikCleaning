@@ -73,16 +73,16 @@ const Footer = () => {
           <div className="footer-contact">
             <h3>Contact</h3>
             <div className="contact-item">
-              <FaPhone className="contact-icon" />
-              <span>+123 123 123</span>
-            </div>
-            <div className="contact-item">
-              <FaEnvelope className="contact-icon" />
-              <span>info@yanikcleaning.be</span>
-            </div>
-            <div className="contact-item">
-              <FaMapMarkerAlt className="contact-icon" />
               <span>Gent, België</span>
+            </div>
+            <div className="contact-item">
+              <span>0470458644</span>
+            </div>
+            <div className="contact-item">
+              <span>cleaningyanak@gmail.com</span>
+            </div>
+            <div className="contact-item">
+              <span>BTW: BE1008813559</span>
             </div>
           </div>
         </div>

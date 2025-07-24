@@ -32,7 +32,9 @@ const ServiceCard = ({ service, detailed = false }) => {
             </div>
           )}
           <div className="service-footer">
-            <span className="btn btn-small">Vraag offerte</span>
+            <span className="btn btn-small" style={{ borderRadius: "5px" }}>
+              Vraag offerte
+            </span>
           </div>
         </div>
       </div>

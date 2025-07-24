@@ -16,10 +16,10 @@ const Home = () => {
     },
     {
       id: 2,
-      title: "Commerciële Schoonmaak",
+      title: "Oprit Reiniging",
       description:
-        "Complete schoonmaakoplossingen voor winkels, restaurants en meer.",
-      image: "/images/vecteezy-foto-4.jpg",
+        "Complete schoonmaakoplossingen voor opritten, parkeerplaatsen en meer.",
+      image: "/images/vecteezy-foto-7.jpeg",
     },
     {
       id: 3,
@@ -70,10 +70,10 @@ const Home = () => {
             Milieuvriendelijke schoonmaakoplossingen voor kantoren en bedrijven
           </p>
           <div className="hero-btns">
-            <Link to="/contact" className="btn">
+            <Link to="/contact" className="btn btn-gradient">
               Vraag een gratis offerte aan
             </Link>
-            <Link to="/services" className="btn btn-outline">
+            <Link to="/services" className="btn btn-gradient">
               Onze Diensten
             </Link>
           </div>
