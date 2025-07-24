@@ -12,8 +12,19 @@ const About = () => {
     <div className="about-page">
       {/* Hero Section */}
       <section className="hero">
-        <video className="hero-video" autoPlay loop muted playsInline>
-          <source src="public/videos/vecteezy_clean-the-floor-using-water-spray_28174846.mp4" />
+        <video
+          className="hero-video"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          poster="/images/hero-poster.jpg"
+        >
+          <source
+            src="public/videos/vecteezy_clean-the-floor-using-water-spray_28174846.mp4"
+            type="video/mp4"
+          />
         </video>
         <div className="hero-content">
           <h1 className="hero-title">Over Yanik Cleaning</h1>
