@@ -113,7 +113,10 @@ const Footer = () => {
               <span>Gent, België</span>
             </div>
             <div className="contact-item">
-              <span>0470458644</span>
+              <span>+32 470 45 86 44</span>
+            </div>
+            <div className="contact-item">
+              <span>+32 489 03 22 92</span>
             </div>
             <div className="contact-item">
               <span>cleaningyanak@gmail.com</span>
