@@ -1,47 +1,54 @@
+
 import React from "react";
 import { FaCheck, FaClock, FaShieldAlt, FaLeaf } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
-// ServiceCard component with bottom-right CTA button
-const ServiceCard = ({ service }) => (
-  <div
-    className="service-card"
-    style={{
-      position: "relative",
-      borderRadius: "1.2rem",
-      overflow: "hidden",
-      boxShadow: "0 2px 16px rgba(30,144,255,0.07)",
-    }}
-  >
-    <div className="service-img">
-      <img src={service.image} alt={service.title} />
-    </div>
+
+// ServiceCard component with bottom-right CTA button (no page refresh)
+const ServiceCard = ({ service }) => {
+  const navigate = useNavigate();
+  return (
     <div
-      className="service-content"
-      style={{ borderRadius: "0 0 1.2rem 1.2rem" }}
+      className="service-card"
+      style={{
+        position: "relative",
+        borderRadius: "1.2rem",
+        overflow: "hidden",
+        boxShadow: "0 2px 16px rgba(30,144,255,0.07)",
+      }}
     >
-      <h3>{service.title}</h3>
-      <p>{service.description}</p>
-      <a
-        href="/contact"
-        className="btn btn-gradient btn-offerte"
-        style={{
-          position: "absolute",
-          right: "1.1rem",
-          bottom: "1.1rem",
-          width: "auto",
-          minWidth: 0,
-          padding: "0.6rem 1.2rem",
-          fontSize: "1rem",
-          borderRadius: "999px",
-          zIndex: 2,
-          boxShadow: "0 2px 8px rgba(30,144,255,0.08)",
-        }}
+      <div className="service-img">
+        <img src={service.image} alt={service.title} />
+      </div>
+      <div
+        className="service-content"
+        style={{ borderRadius: "0 0 1.2rem 1.2rem" }}
       >
-        Vraag offerte
-      </a>
+        <h3>{service.title}</h3>
+        <p>{service.description}</p>
+        <button
+          type="button"
+          className="btn btn-gradient btn-offerte"
+          style={{
+            position: "absolute",
+            right: "1.1rem",
+            bottom: "1.1rem",
+            width: "auto",
+            minWidth: 0,
+            padding: "0.6rem 1.2rem",
+            fontSize: "1rem",
+            borderRadius: "999px",
+            zIndex: 2,
+            boxShadow: "0 2px 8px rgba(30,144,255,0.08)",
+          }}
+          onClick={() => navigate("/contact")}
+        >
+          Vraag offerte
+        </button>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Home = () => {
   const featuredServices = [
