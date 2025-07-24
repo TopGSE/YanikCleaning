@@ -219,7 +219,7 @@ const Home = () => {
         .hero-promo-banner {
           background: rgba(255, 255, 255, 0.95);
           color: #333;
-          padding: 1.5rem;
+          padding: 1rem 1.2rem;
           border-radius: 12px;
           width: 320px;
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
@@ -372,11 +372,13 @@ const Home = () => {
           {/* Desktop promo banner below buttons */}
           {!isMobile && (
             <div className="hero-promo-banner">
-              <div className="promo-discount">20% KORTING</div>
               <div className="promo-text">
                 Eerste schoonmaak met 20% korting.
                 <br />
                 <strong>Probeer ons nu!</strong>
+              </div>
+              <div className="promo-discount" style={{ marginTop: "1.2rem" }}>
+                20% KORTING
               </div>
             </div>
           )}
