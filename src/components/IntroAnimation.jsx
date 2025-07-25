@@ -1,22 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./IntroAnimation.css";
 
-const LOGO_ICON = (
-  <svg className="intro-logo-icon" viewBox="0 0 64 64" width="64" height="64">
-    {/* Abstract spray bottle: minimalist geometric */}
-    <rect x="28" y="18" width="8" height="28" rx="4" fill="url(#chrome)" />
-    <rect x="26" y="44" width="12" height="10" rx="4" fill="url(#chrome)" />
-    <rect x="30" y="10" width="4" height="10" rx="2" fill="#d4af37" />
-    <ellipse cx="32" cy="8" rx="6" ry="3" fill="#c0c0c0" />
-    <defs>
-      <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stopColor="#fff" />
-        <stop offset="40%" stopColor="#c0c0c0" />
-        <stop offset="100%" stopColor="#1a365d" />
-      </linearGradient>
-    </defs>
-  </svg>
-);
+const LOGO_ICON = null;
 
 const COMPANY = "YANIK";
 const SUB = "CLEANING";
@@ -33,9 +18,8 @@ const IntroAnimation = ({ onFinish }) => {
 
   // Animation sequence
   useEffect(() => {
-    // 0-1s: particles, bg
-    const t1 = setTimeout(() => setShowIcon(true), 1000); // 1s: icon in
-    const t2 = setTimeout(() => setShowText(true), 2000); // 2s: text in
+    // 0-0.5s: particles, bg
+    const t1 = setTimeout(() => setShowText(true), 500); // 0.5s: text in
     // Typewriter effect for YANIK
     let typeIdx = 0;
     let typeTimer;
@@ -46,19 +30,18 @@ const IntroAnimation = ({ onFinish }) => {
         typeTimer = setTimeout(typeNext, 80);
       } else {
         setShowSub(true);
-        setTimeout(() => setShowLine(true), 400);
-        setTimeout(() => setShowSparkle(true), 700);
+        setTimeout(() => setShowLine(true), 300);
+        setTimeout(() => setShowSparkle(true), 600);
         setTimeout(() => {
           setOut(true);
           setTimeout(onFinish, 900);
         }, 1200);
       }
     }
-    const t3 = setTimeout(() => typeNext(), 2100);
+    const t2 = setTimeout(() => typeNext(), 700); // Start typewriter after text appears
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
-      clearTimeout(t3);
       clearTimeout(typeTimer);
     };
   }, [onFinish]);
@@ -72,15 +55,33 @@ const IntroAnimation = ({ onFinish }) => {
         ))}
       </div>
       <div className="intro-content">
-        <div className="ultra-logo-wrapper">
-          {/* Icon */}
-          <div className={`logo-icon-wrap${showIcon ? " icon-in" : ""}`}>
-            {LOGO_ICON}
-            <span className="icon-shimmer" />
-          </div>
+        <div
+          className="ultra-logo-wrapper"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           {/* Text */}
-          <div className="ultra-logo-text">
-            <span className="ultra-yanik" style={{ opacity: showText ? 1 : 0 }}>
+          <div
+            className="ultra-logo-text"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <span
+              className="ultra-yanik"
+              style={{
+                opacity: showText ? 1 : 0,
+                fontSize: "2.6rem",
+                fontWeight: 700,
+                letterSpacing: "0.08em",
+              }}
+            >
               {COMPANY.split("").map((l, i) => (
                 <span
                   key={i}
@@ -99,12 +100,27 @@ const IntroAnimation = ({ onFinish }) => {
                 </span>
               ))}
             </span>
-            <span className={`ultra-cleaning${showSub ? " cleaning-in" : ""}`}>
+            {/* Gold line sweep centered between YANIK and CLEANING */}
+            <span
+              className={`ultra-gold-line${showLine ? " line-in" : ""}`}
+              style={{
+                margin: "0.7rem auto",
+                display: "block",
+                width: "80px",
+                height: "4px",
+              }}
+            />
+            <span
+              className={`ultra-cleaning${showSub ? " cleaning-in" : ""}`}
+              style={{
+                fontSize: "1.6rem",
+                fontWeight: 500,
+                letterSpacing: "0.06em",
+              }}
+            >
               {SUB}
             </span>
           </div>
-          {/* Gold line sweep */}
-          <span className={`ultra-gold-line${showLine ? " line-in" : ""}`} />
           {/* Final sparkle */}
           <span
             className={`ultra-sparkle${showSparkle ? " sparkle-in" : ""}`}
