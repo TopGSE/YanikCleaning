@@ -77,20 +77,20 @@ const IntroAnimation = ({ onFinish }) => {
   }, [onFinish, audioAllowed]);
 
   return (
-    <div className={`intro-animation ultra-modern${out ? " out-sweep" : ""}`}>
+    <div className={`intro-animation ultra-modern${out ? " out-sweep" : ""}`} aria-label="Introductie animatie Yanik Cleaning" role="region">
       <audio
         ref={bellAudioRef}
         src="/sounds/bright-bell-sound.mp3"
         preload="auto"
       />
       <audio ref={sparkleAudioRef} src="/sounds/spray.mp3" preload="auto" />
-      <div className="intro-bg ultra-bg" />
-      <div className="intro-particles">
+      <div className="intro-bg ultra-bg" aria-hidden="true" />
+      <div className="intro-particles" aria-hidden="true">
         {[...Array(18)].map((_, i) => (
           <span key={i} className={`particle particle-${i}`} />
         ))}
       </div>
-      <div className="intro-content">
+      <div className="intro-content" aria-label="Introductie inhoud" role="group">
         <div
           className="ultra-logo-wrapper"
           style={{
@@ -99,6 +99,8 @@ const IntroAnimation = ({ onFinish }) => {
             alignItems: "center",
             justifyContent: "center",
           }}
+          aria-label="Logo en bedrijfsnaam animatie"
+          role="group"
         >
           {/* Text */}
           <div
@@ -108,6 +110,9 @@ const IntroAnimation = ({ onFinish }) => {
               flexDirection: "column",
               alignItems: "center",
             }}
+            aria-label="Bedrijfsnaam Yanik Cleaning"
+            role="heading"
+            aria-level="1"
           >
             <span
               className="ultra-yanik"
@@ -117,6 +122,7 @@ const IntroAnimation = ({ onFinish }) => {
                 fontWeight: 700,
                 letterSpacing: "0.08em",
               }}
+              aria-label="YANIK"
             >
               {COMPANY.split("").map((l, i) => (
                 <span
@@ -153,6 +159,7 @@ const IntroAnimation = ({ onFinish }) => {
                 fontWeight: 500,
                 letterSpacing: "0.06em",
               }}
+              aria-label="CLEANING"
             >
               {SUB}
             </span>
