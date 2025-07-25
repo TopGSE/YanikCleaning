@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import PromoFab from "./components/PromoFab";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopOnNavigate from "./components/ScrollToTopOnNavigate";
 import Footer from "./components/Footer";
@@ -19,6 +20,7 @@ function App() {
     <Router>
       <div className="app">
         {showIntro && <IntroAnimation onFinish={handleIntroFinish} />}
+        <PromoFab />
         <div
           className={`site-content${
             showIntro ? " site-fade-out" : " site-fade-in"

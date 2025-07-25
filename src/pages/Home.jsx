@@ -363,12 +363,12 @@ const Home = () => {
           </h1>
           <p className="hero-subtitle">Uw ruimte, onze zorg altijd kraaknet!</p>
           <div className="hero-btns">
-            <a href="/contact" className="btn btn-gradient">
+            <Link to="/contact" className="btn btn-gradient">
               Vraag een gratis offerte aan
-            </a>
-            <a href="/services" className="btn btn-gradient">
+            </Link>
+            <Link to="/services" className="btn btn-gradient">
               Onze Diensten
-            </a>
+            </Link>
           </div>
           {/* Desktop promo banner below buttons */}
           {!isMobile && (
