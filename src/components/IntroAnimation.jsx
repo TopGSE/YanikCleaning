@@ -7,6 +7,9 @@ const COMPANY = "YANIK";
 const SUB = "CLEANING";
 
 const IntroAnimation = ({ onFinish }) => {
+  // Sound effect refs
+  const bellAudioRef = useRef(null);
+  const sparkleAudioRef = useRef(null);
   const [out, setOut] = useState(false);
   const [showIcon, setShowIcon] = useState(false);
   const [showText, setShowText] = useState(false);
@@ -14,10 +17,22 @@ const IntroAnimation = ({ onFinish }) => {
   const [showSub, setShowSub] = useState(false);
   const [showLine, setShowLine] = useState(false);
   const [showSparkle, setShowSparkle] = useState(false);
+  const [audioAllowed, setAudioAllowed] = useState(false);
   const timeoutRef = useRef();
 
   // Animation sequence
   useEffect(() => {
+    // Automatic audio unlock: listen for first user interaction
+    function unlockAudio() {
+      setAudioAllowed(true);
+      window.removeEventListener("click", unlockAudio);
+      window.removeEventListener("keydown", unlockAudio);
+      window.removeEventListener("touchstart", unlockAudio);
+    }
+    window.addEventListener("click", unlockAudio);
+    window.addEventListener("keydown", unlockAudio);
+    window.addEventListener("touchstart", unlockAudio);
+
     // 0-0.5s: particles, bg
     const t1 = setTimeout(() => setShowText(true), 500); // 0.5s: text in
     // Typewriter effect for YANIK
@@ -29,9 +44,21 @@ const IntroAnimation = ({ onFinish }) => {
         typeIdx++;
         typeTimer = setTimeout(typeNext, 80);
       } else {
+        // Play bell sound right after text animates, only if audioAllowed
+        if (audioAllowed && bellAudioRef.current) {
+          bellAudioRef.current.currentTime = 0;
+          bellAudioRef.current.play();
+        }
         setShowSub(true);
         setTimeout(() => setShowLine(true), 300);
-        setTimeout(() => setShowSparkle(true), 600);
+        setTimeout(() => {
+          setShowSparkle(true);
+          // Play sparkle sound only if audioAllowed
+          if (audioAllowed && sparkleAudioRef.current) {
+            sparkleAudioRef.current.currentTime = 0;
+            sparkleAudioRef.current.play();
+          }
+        }, 600);
         setTimeout(() => {
           setOut(true);
           setTimeout(onFinish, 900);
@@ -43,11 +70,20 @@ const IntroAnimation = ({ onFinish }) => {
       clearTimeout(t1);
       clearTimeout(t2);
       clearTimeout(typeTimer);
+      window.removeEventListener("click", unlockAudio);
+      window.removeEventListener("keydown", unlockAudio);
+      window.removeEventListener("touchstart", unlockAudio);
     };
-  }, [onFinish]);
+  }, [onFinish, audioAllowed]);
 
   return (
     <div className={`intro-animation ultra-modern${out ? " out-sweep" : ""}`}>
+      <audio
+        ref={bellAudioRef}
+        src="/sounds/bright-bell-sound.mp3"
+        preload="auto"
+      />
+      <audio ref={sparkleAudioRef} src="/sounds/spray.mp3" preload="auto" />
       <div className="intro-bg ultra-bg" />
       <div className="intro-particles">
         {[...Array(18)].map((_, i) => (
