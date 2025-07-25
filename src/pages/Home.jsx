@@ -406,6 +406,8 @@ const Home = () => {
       <CookieConsent
         location="bottom"
         buttonText="Akkoord"
+        declineButtonText="Weigeren"
+        enableDeclineButton={true}
         style={{
           background: "#183153",
           color: "#fff",
@@ -414,6 +416,10 @@ const Home = () => {
           boxShadow: "0 -2px 16px #0002",
           padding: "1.1rem 1.5rem",
           zIndex: 9999,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexWrap: "wrap",
         }}
         buttonStyle={{
           background: "linear-gradient(90deg, #00a896 60%, #028090 100%)",
@@ -424,6 +430,22 @@ const Home = () => {
           padding: "0.6rem 1.6rem",
           boxShadow: "0 2px 8px #00a89633",
           border: "none",
+          marginRight: "0.5rem",
+        }}
+        declineButtonStyle={{
+          background: "#fff",
+          color: "#028090",
+          fontWeight: "bold",
+          borderRadius: "6px",
+          fontSize: "1.05rem",
+          padding: "0.6rem 1.6rem",
+          border: "1px solid #00a896",
+        }}
+        onDecline={() => {
+          localStorage.setItem("cookiePrefs", "rejected");
+        }}
+        onAccept={() => {
+          localStorage.setItem("cookiePrefs", "accepted");
         }}
         expires={180}
       >
