@@ -1,7 +1,7 @@
 import React from "react";
 import { FaCheck, FaClock, FaShieldAlt, FaLeaf } from "react-icons/fa";
 import { useNavigate, Link } from "react-router-dom";
-import CookieConsent from "react-cookie-consent";
+import CookieConsentOverlay from "../components/CookieConsentOverlay";
 
 // ServiceCard component with bottom-right CTA button (no page refresh)
 const ServiceCard = ({ service }) => {
@@ -438,61 +438,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* Cookie Consent Banner */}
-      <CookieConsent
-        location="bottom"
-        buttonText="Akkoord"
-        declineButtonText="Weigeren"
-        enableDeclineButton={true}
-        style={{
-          background: "#183153",
-          color: "#fff",
-          fontSize: "1.05rem",
-          borderRadius: "10px 10px 0 0",
-          boxShadow: "0 -2px 16px #0002",
-          padding: "1.1rem 1.5rem",
-          zIndex: 9999,
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexWrap: "wrap",
-        }}
-        buttonStyle={{
-          background: "linear-gradient(90deg, #00a896 60%, #028090 100%)",
-          color: "#fff",
-          fontWeight: "bold",
-          borderRadius: "6px",
-          fontSize: "1.05rem",
-          padding: "0.6rem 1.6rem",
-          boxShadow: "0 2px 8px #00a89633",
-          border: "none",
-          marginRight: "0.5rem",
-        }}
-        declineButtonStyle={{
-          background: "#fff",
-          color: "#028090",
-          fontWeight: "bold",
-          borderRadius: "6px",
-          fontSize: "1.05rem",
-          padding: "0.6rem 1.6rem",
-          border: "1px solid #00a896",
-        }}
-        onDecline={() => {
-          localStorage.setItem("cookiePrefs", "rejected");
-        }}
-        onAccept={() => {
-          localStorage.setItem("cookiePrefs", "accepted");
-        }}
-        expires={180}
-      >
-        Deze website gebruikt cookies om uw ervaring te verbeteren.{" "}
-        <a
-          href="/privacy"
-          style={{ color: "#00a896", textDecoration: "underline" }}
-        >
-          Meer informatie
-        </a>
-      </CookieConsent>
+      {/* GDPR Cookie Consent Overlay is now global in App.jsx */}
     </div>
   );
 };

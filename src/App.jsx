@@ -6,6 +6,8 @@ import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopOnNavigate from "./components/ScrollToTopOnNavigate";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import CookieConsentOverlay from "./components/CookieConsentOverlay";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
@@ -21,6 +23,7 @@ function App() {
       <div className="app">
         {showIntro && <IntroAnimation onFinish={handleIntroFinish} />}
         <PromoFab />
+        {!showIntro && <CookieConsentOverlay />}
         <div
           className={`site-content${
             showIntro ? " site-fade-out" : " site-fade-in"
@@ -35,6 +38,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
             </Routes>
           </main>
           <Footer />
