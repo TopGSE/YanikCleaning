@@ -434,21 +434,19 @@
 }
 
 .ultra-gold-line {
-	position: absolute;
-	left: 50%;
-	bottom: 38px;
+	display: block;
 	width: 0;
 	height: 3px;
 	background: linear-gradient(90deg, #d4af37 0%, #fff 100%);
 	border-radius: 2px;
 	opacity: 0.85;
 	box-shadow: 0 2px 8px #d4af3744;
-	transform: translateX(-50%);
+	margin: 0.7rem auto;
 	transition: width 0.7s cubic-bezier(.77, 0, .18, 1);
 }
 
 .line-in {
-	width: 180px;
+	width: 80px;
 	animation: goldLineSweep 0.7s cubic-bezier(.77, 0, .18, 1);
 }
 
@@ -458,7 +456,7 @@
 	}
 
 	100% {
-		width: 180px;
+		width: 80px;
 	}
 }
 
@@ -601,7 +599,7 @@
 	}
 
 	.ultra-gold-line.line-in {
-		width: 90px;
+		width: 60px;
 	}
 }
 
@@ -641,10 +639,6 @@
 	align-items: center;
 	animation: slideUp 1.2s cubic-bezier(.77, 0, .18, 1) 0.2s;
 }
-
-
-
-
 
 /* Realistic intro: water ripple, glassy logo, shine sweep */
 .realistic-bg {
@@ -875,8 +869,6 @@
 	}
 }
 
-
-
 .intro-logo-anim {
 	display: flex;
 	flex-direction: column;
@@ -957,8 +949,6 @@
 	transform: translate(-50%, -50%) scale(0.7);
 	animation: shinePulse 1.6s 0.7s;
 }
-
-
 
 @keyframes slideUp {
 	0% {

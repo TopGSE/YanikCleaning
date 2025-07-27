@@ -77,7 +77,11 @@ const IntroAnimation = ({ onFinish }) => {
   }, [onFinish, audioAllowed]);
 
   return (
-    <div className={`intro-animation ultra-modern${out ? " out-sweep" : ""}`} aria-label="Introductie animatie Yanik Cleaning" role="region">
+    <div
+      className={`intro-animation ultra-modern${out ? " out-sweep" : ""}`}
+      aria-label="Introductie animatie Yanik Cleaning"
+      role="region"
+    >
       <audio
         ref={bellAudioRef}
         src="/sounds/bright-bell-sound.mp3"
@@ -90,7 +94,11 @@ const IntroAnimation = ({ onFinish }) => {
           <span key={i} className={`particle particle-${i}`} />
         ))}
       </div>
-      <div className="intro-content" aria-label="Introductie inhoud" role="group">
+      <div
+        className="intro-content"
+        aria-label="Introductie inhoud"
+        role="group"
+      >
         <div
           className="ultra-logo-wrapper"
           style={{
@@ -146,8 +154,6 @@ const IntroAnimation = ({ onFinish }) => {
             <span
               className={`ultra-gold-line${showLine ? " line-in" : ""}`}
               style={{
-                margin: "0.7rem auto",
-                display: "block",
                 width: "80px",
                 height: "4px",
               }}
