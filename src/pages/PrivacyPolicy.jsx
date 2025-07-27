@@ -3,15 +3,21 @@ import React from "react";
 const PrivacyPolicy = () => (
   <div
     className="privacy-policy-page"
-    style={{ maxWidth: 700, margin: "0 auto", padding: "2.5rem 1.2rem" }}
+    style={{
+      maxWidth: 1117,
+      margin: "0 auto",
+      padding: "2.5rem 1.2rem",
+      marginTop: "6rem",
+      marginBottom: "2rem",
+    }}
   >
     <style>{`
       .privacy-policy-page {
         background: #fff;
         border-radius: 1.5rem;
         box-shadow: 0 8px 32px #18315322;
-        margin-top: 2.5rem;
-        margin-bottom: 2.5rem;
+       
+        margin-bottom: 2rem;
         font-family: 'Inter', Arial, sans-serif;
       }
       .privacy-policy-page h1 {
