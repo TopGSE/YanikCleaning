@@ -289,6 +289,9 @@ const Home = () => {
 
         /* Typewriter cursor animation */
         .typewriter-cursor {
+          display: inline-block;
+          width: 0.06ch;
+          font-weight: 400;
           animation: blink 1.5s infinite;
         }
         @keyframes blink {
@@ -357,16 +360,34 @@ const Home = () => {
         </video>
 
         <div className="hero-content" aria-label="Hero inhoud" role="group">
-          <h1 className="hero-title" aria-label="YANIK CLEANING" role="heading" aria-level="1">
+          <h1
+            className="hero-title"
+            aria-label="YANIK CLEANING"
+            role="heading"
+            aria-level="1"
+          >
             {typedTitle}
             <span className="typewriter-cursor">|</span>
           </h1>
-          <p className="hero-subtitle" aria-label="Uw ruimte, onze zorg altijd kraaknet!">Uw ruimte, onze zorg altijd kraaknet!</p>
+          <p
+            className="hero-subtitle"
+            aria-label="Uw ruimte, onze zorg altijd kraaknet!"
+          >
+            Uw ruimte, onze zorg altijd kraaknet!
+          </p>
           <div className="hero-btns" aria-label="Hero knoppen" role="group">
-            <Link to="/contact" className="btn btn-gradient" aria-label="Vraag een gratis offerte aan">
+            <Link
+              to="/contact"
+              className="btn btn-gradient"
+              aria-label="Vraag een gratis offerte aan"
+            >
               Vraag een gratis offerte aan
             </Link>
-            <Link to="/services" className="btn btn-gradient" aria-label="Onze Diensten">
+            <Link
+              to="/services"
+              className="btn btn-gradient"
+              aria-label="Onze Diensten"
+            >
               Onze Diensten
             </Link>
           </div>
@@ -387,10 +408,25 @@ const Home = () => {
       </section>
 
       {/* Services Preview Section */}
-      <section className="section services" aria-label="Diensten sectie" role="region">
+      <section
+        className="section services"
+        aria-label="Diensten sectie"
+        role="region"
+      >
         <div className="container">
-        <h2 className="section-title" aria-label="Onze Populaire Diensten" role="heading" aria-level="2">Onze Populaire Diensten</h2>
-          <div className="services-container" aria-label="Diensten overzicht" role="list">
+          <h2
+            className="section-title"
+            aria-label="Onze Populaire Diensten"
+            role="heading"
+            aria-level="2"
+          >
+            Onze Populaire Diensten
+          </h2>
+          <div
+            className="services-container"
+            aria-label="Diensten overzicht"
+            role="list"
+          >
             {featuredServices.map((service) => (
               <ServiceCard key={service.id} service={service} />
             ))}
