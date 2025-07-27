@@ -113,16 +113,31 @@ const Footer = () => {
               <span>Gent, België</span>
             </div>
             <div className="contact-item">
-              <span>+32 470 45 86 44</span>
+              <a
+                href="tel:+32470458644"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                +32 470 45 86 44
+              </a>
             </div>
             <div className="contact-item">
-              <span>+32 489 03 22 92</span>
+              <a
+                href="tel:+32489032292"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                +32 489 03 22 92
+              </a>
             </div>
             <div className="contact-item">
-              <span>cleaningyanak@gmail.com</span>
+              <a
+                href="mailto:cleaningyanak@gmail.com"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                cleaningyanak@gmail.com
+              </a>
             </div>
             <div className="contact-item">
-              <span>BTW: BE1008813559</span>
+              <span>BTW: BE1008.813.559</span>
             </div>
           </div>
         </div>

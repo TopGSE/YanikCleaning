@@ -5,6 +5,10 @@
 	gap: 0.8rem;
 }
 
+.contact-item {
+	margin-left: -0.001rem;
+}
+
 .footer-contact .contact-item {
 	display: flex;
 	align-items: center;
