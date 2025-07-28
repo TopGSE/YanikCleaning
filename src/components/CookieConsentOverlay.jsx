@@ -34,7 +34,12 @@ const CookieConsentOverlay = () => {
     if (!prefLocal && !prefCookie && location.pathname !== "/privacy") {
       setVisible(true);
     }
-  }, [location]);
+
+    // Listen for footer event to open consent overlay
+    const openConsent = () => setVisible(true);
+    window.addEventListener("openCookieConsent", openConsent);
+    return () => window.removeEventListener("openCookieConsent", openConsent);
+  }, [location, privacyDismissed]);
 
   const handleAccept = () => {
     localStorage.setItem(
@@ -50,6 +55,7 @@ const CookieConsentOverlay = () => {
     setVisible(false);
   };
 
+  // Decline all non-essential cookies (Weigeren)
   const handleDecline = () => {
     localStorage.setItem(
       COOKIE_KEY,
@@ -57,10 +63,10 @@ const CookieConsentOverlay = () => {
         essential: true,
         statistics: false,
         marketing: false,
-        status: "essential",
+        status: "declined",
       })
     );
-    setCookie(COOKIE_KEY, "essential", 180);
+    setCookie(COOKIE_KEY, "declined", 180);
     setVisible(false);
   };
 
@@ -97,11 +103,11 @@ const CookieConsentOverlay = () => {
             Accepteer
           </button>
           <button
-            className="cookie-btn cookie-essential"
+            className="cookie-btn cookie-decline"
             onClick={handleDecline}
-            aria-label="Alleen noodzakelijke cookies"
+            aria-label="Weigeren"
           >
-            Alleen noodzakelijke
+            Weigeren
           </button>
         </div>
         <button
@@ -198,6 +204,15 @@ const CookieConsentOverlay = () => {
         )}
       </div>
       <style>{`
+        .cookie-decline {
+          background: #fff;
+          color: #e74c3c;
+          border: 1px solid #e74c3c;
+        }
+        .cookie-decline:hover {
+          background: #e74c3c;
+          color: #fff;
+        }
         .cookie-overlay-consent {
           position: fixed;
           inset: 0;

@@ -45,6 +45,7 @@ const Contact = () => {
         {
           from_name: "Yanik Cleaning",
           from_email: "cleaningyanak@gmail.com",
+          reply_to: "cleaningyanak@gmail.com",
           phone: formData.phone,
           service: formData.service,
           message: formData.message,

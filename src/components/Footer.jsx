@@ -146,6 +146,26 @@ const Footer = () => {
           <p>
             &copy; {new Date().getFullYear()} Yanik Cleaning. Alle rechten
             voorbehouden.
+            <span style={{ marginLeft: 12, fontSize: "1em" }}>
+              <button
+                type="button"
+                style={{
+                  background: "none",
+                  border: "none",
+                  color: "#028090",
+                  textDecoration: "underline",
+                  cursor: "pointer",
+                  padding: 0,
+                  font: "inherit",
+                }}
+                onClick={() =>
+                  window.dispatchEvent(new CustomEvent("openCookieConsent"))
+                }
+                aria-label="Cookie-instellingen aanpassen"
+              >
+                Cookie-instellingen
+              </button>
+            </span>
           </p>
         </div>
       </div>

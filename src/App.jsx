@@ -1,4 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+// Utility to check consent
+function getConsentPrefs() {
+  try {
+    const local = localStorage.getItem("cookiePrefs");
+    if (local) return JSON.parse(local);
+    const match = document.cookie.match(/cookiePrefs=([^;]+)/);
+    if (match) {
+      // Only status string in cookie, not full prefs
+      return { status: match[1] };
+    }
+  } catch {}
+  return null;
+}
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import PromoFab from "./components/PromoFab";
@@ -17,6 +30,35 @@ import "./App.css";
 function App() {
   const [showIntro, setShowIntro] = useState(true);
   const handleIntroFinish = () => setShowIntro(false);
+
+  // Only load analytics/marketing scripts if consent is given
+  useEffect(() => {
+    const prefs = getConsentPrefs();
+    if (!prefs) return; // No consent yet
+    // Example: Google Analytics (statistics)
+    if (prefs.statistics) {
+      if (!window.GA_INITIALIZED) {
+        const script = document.createElement("script");
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX";
+        script.async = true;
+        document.head.appendChild(script);
+        script.onload = () => {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            window.dataLayer.push(arguments);
+          }
+          window.gtag = gtag;
+          gtag("js", new Date());
+          gtag("config", "G-XXXXXXXXXX");
+          window.GA_INITIALIZED = true;
+        };
+      }
+    }
+    // Example: Marketing script (replace with your own)
+    if (prefs.marketing) {
+      // ...load marketing scripts here...
+    }
+  }, [showIntro]);
 
   return (
     <Router>
