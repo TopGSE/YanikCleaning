@@ -43,8 +43,8 @@ const Contact = () => {
         SERVICE_ID,
         TEMPLATE_ID,
         {
-          from_name: formData.name,
-          from_email: formData.email,
+          from_name: "Yanik Cleaning",
+          from_email: "cleaningyanak@gmail.com",
           phone: formData.phone,
           service: formData.service,
           message: formData.message,
