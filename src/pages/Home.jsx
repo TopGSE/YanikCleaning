@@ -407,36 +407,119 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Preview Section */}
+      {/* Services Preview Section - Improved */}
       <section
         className="section services"
         aria-label="Diensten sectie"
         role="region"
+        style={{
+          background: "#f7fafc",
+          paddingBottom: 0,
+          marginBottom: "3.5rem",
+        }}
       >
         <div className="container">
-          <h2
-            className="section-title"
-            aria-label="Onze Populaire Diensten"
-            role="heading"
-            aria-level="2"
-          >
-            Onze Populaire Diensten
-          </h2>
+          <div style={{ textAlign: "center", marginBottom: "1.2rem" }}>
+            <span
+              style={{
+                display: "inline-block",
+                background: "#00a89622",
+                color: "#028090",
+                fontWeight: 700,
+                borderRadius: "999px",
+                padding: "0.3rem 1.1rem",
+                fontSize: "1.02rem",
+                letterSpacing: ".04em",
+                marginBottom: ".5rem",
+              }}
+            >
+              Onze diensten
+            </span>
+            <h2
+              className="section-title"
+              style={{ fontSize: "2.1rem", margin: 0 }}
+            >
+              Populaire schoonmaakoplossingen
+            </h2>
+            <p
+              style={{
+                color: "#444",
+                maxWidth: 540,
+                margin: "0.7rem auto 0 auto",
+                fontSize: "1.08rem",
+              }}
+            >
+              Van kantoren tot tuinen: wij bieden een breed scala aan
+              professionele schoonmaakdiensten, afgestemd op uw wensen. Ontdek
+              onze populairste oplossingen hieronder.
+            </p>
+          </div>
           <div
-            className="services-container"
+            className="services-container improved-grid"
             aria-label="Diensten overzicht"
             role="list"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))",
+              gap: "2.1rem 1.5rem",
+              marginTop: "2.2rem",
+            }}
           >
-            {featuredServices.map((service) => (
-              <ServiceCard key={service.id} service={service} />
+            {featuredServices.map((service, idx) => (
+              <div
+                key={service.id}
+                style={{
+                  position: "relative",
+                  animation: `fadeInUp 0.7s ${0.1 + idx * 0.12}s both`,
+                }}
+              >
+                {idx === 0 && (
+                  <span
+                    style={{
+                      position: "absolute",
+                      top: 18,
+                      right: 18,
+                      background:
+                        "linear-gradient(90deg,#00a896 60%,#028090 100%)",
+                      color: "#fff",
+                      fontWeight: 700,
+                      fontSize: ".92rem",
+                      borderRadius: "999px",
+                      padding: "0.22rem 1.1rem",
+                      zIndex: 3,
+                      boxShadow: "0 2px 8px #02809022",
+                    }}
+                  >
+                    Meest gekozen
+                  </span>
+                )}
+                <ServiceCard service={service} />
+              </div>
             ))}
           </div>
-          <div style={{ textAlign: "center", marginTop: "2rem" }}>
-            <Link to="/services" className="btn btn-gradient">
+          <div style={{ textAlign: "center", marginTop: "2.7rem" }}>
+            <Link
+              to="/services"
+              className="btn btn-gradient"
+              style={{ fontSize: "1.13rem", padding: "0.9rem 2.2rem" }}
+            >
               Bekijk alle diensten
             </Link>
           </div>
         </div>
+        {/* FadeInUp animation style for services grid */}
+        <style>{`
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(40px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `}</style>
       </section>
       {/* GDPR Cookie Consent Overlay is now global in App.jsx */}
     </div>

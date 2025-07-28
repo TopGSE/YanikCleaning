@@ -400,7 +400,7 @@ body {
 .submit-btn {
 	position: relative;
 	padding: 1.25rem 2.5rem;
-	background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+	background: linear-gradient(90deg, #1e90ff 60%, #38b6ff 100%);
 	color: white;
 	border: none;
 	border-radius: var(--radius-xl);
@@ -607,7 +607,7 @@ body {
 
 /* Quote Card */
 .quote-card {
-	background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+	background: linear-gradient(90deg, #1e90ff 60%, #38b6ff 100%);
 	color: white;
 	border: none;
 }
