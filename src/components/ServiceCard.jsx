@@ -32,9 +32,9 @@ const ServiceCard = ({ service, detailed = false }) => {
           )}
           <div className="service-footer">
             <Link
-              to="/contact"
+              to="/contact#main-contact-section"
               className="btn btn-small"
-              style={{ borderRadius: "5px" }}
+              style={{ borderRadius: "10px" }}
             >
               Vraag offerte
             </Link>
