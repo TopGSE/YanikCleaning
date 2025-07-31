@@ -37,11 +37,11 @@ const testimonials = [
     title: "Topresultaat",
   },
 ];
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import "./Contact.css";
 
 const SERVICE_ID = "service_9hcx80i"; // Updated with your EmailJS service ID
-const TEMPLATE_ID = "template_wvlg1sm"; // Updated with your EmailJS template ID
+const TEMPLATE_ID = "template_qzudjew"; // Updated with your EmailJS template ID
 const USER_ID = "WQUCY_JOBfyNDudpa"; // Updated with your EmailJS public key (user ID)
 
 const Contact = () => {
@@ -85,14 +85,14 @@ const Contact = () => {
         SERVICE_ID,
         TEMPLATE_ID,
         {
-          from_name: "Yanik Cleaning",
-          from_email: "cleaningyanak@gmail.com",
-          reply_to: "cleaningyanak@gmail.com",
+          from_name: formData.name,
+          from_email: formData.email,
+          reply_to: formData.email,
           phone: formData.phone,
           service: formData.service,
           message: formData.message,
         },
-        USER_ID
+        { publicKey: USER_ID }
       )
       .then(
         (result) => {
@@ -107,6 +107,12 @@ const Contact = () => {
         },
         (error) => {
           setSuccess(false);
+          // Log error for debugging
+          if (error && error.text) {
+            console.error("EmailJS error:", error.text);
+          } else {
+            console.error("EmailJS error:", error);
+          }
         }
       )
       .finally(() => setSending(false));
