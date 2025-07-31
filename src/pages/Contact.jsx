@@ -296,7 +296,7 @@ const Contact = () => {
                     <FaCheckCircle className="alert-icon" />
                     <div>
                       <strong>Bedankt voor uw aanvraag!</strong>
-                      <p>We nemen binnen 2 uur contact met u op.</p>
+                      <p>We nemen binnen 24 uur contact met u op.</p>
                     </div>
                   </div>
                 )}
@@ -305,7 +305,10 @@ const Contact = () => {
                   <div className="alert alert-error">
                     <div>
                       <strong>Er ging iets mis</strong>
-                      <p>Probeer het opnieuw of neem direct contact op.</p>
+                      <p>
+                        Probeer het opnieuw of neem direct contact op: +32 470
+                        45 86 44
+                      </p>
                     </div>
                   </div>
                 )}
