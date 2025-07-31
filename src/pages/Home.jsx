@@ -367,7 +367,6 @@ const Home = () => {
             aria-level="1"
           >
             {typedTitle}
-            <span className="typewriter-cursor">|</span>
           </h1>
           <p
             className="hero-subtitle"
