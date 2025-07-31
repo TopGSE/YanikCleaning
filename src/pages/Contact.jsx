@@ -12,9 +12,9 @@ import { useState } from "react";
 import emailjs from "emailjs-com";
 import "./Contact.css";
 
-const SERVICE_ID = "service_7gsjzdd"; // Updated with your EmailJS service ID
-const TEMPLATE_ID = "template_va8hzws"; // Updated with your EmailJS template ID
-const USER_ID = "jIzolnkaMK56KlX-C"; // Updated with your EmailJS public key (user ID)
+const SERVICE_ID = "service_9hcx80i"; // Updated with your EmailJS service ID
+const TEMPLATE_ID = "template_wvlg1sm"; // Updated with your EmailJS template ID
+const USER_ID = "WQUCY_JOBfyNDudpa"; // Updated with your EmailJS public key (user ID)
 
 const Contact = () => {
   const [formData, setFormData] = useState({

@@ -1,3 +1,135 @@
+/* --- Service Process Section Modern Styles --- */
+.service-process .container {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+
+.service-process .section-title {
+	text-align: center;
+	font-size: 2.3rem;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+	letter-spacing: -1px;
+}
+
+.service-process .section-subtitle {
+	text-align: center;
+	color: #555;
+	font-size: 1.1rem;
+	margin-bottom: 2.5rem;
+}
+
+.process-steps {
+	display: flex;
+	justify-content: space-between;
+	gap: 2rem;
+	flex-wrap: wrap;
+}
+
+.process-step {
+	background: #fff;
+	border-radius: 1.2rem;
+	box-shadow: 0 4px 24px 0 #1e90ff13;
+	flex: 1 1 180px;
+	min-width: 180px;
+	max-width: 220px;
+	padding: 2.2rem 1.2rem 1.5rem 1.2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 auto;
+	transition: box-shadow 0.3s, transform 0.3s;
+	border: 1px solid #eaf2fb;
+}
+
+.process-step:hover {
+	box-shadow: 0 8px 32px 0 #1e90ff22;
+	transform: translateY(-6px) scale(1.03);
+	border-color: #1e90ff33;
+}
+
+.process-step h3 {
+	font-size: 1.08rem;
+	font-weight: 700;
+	color: #1e90ff;
+	margin-bottom: 0.5rem;
+	text-align: center;
+}
+
+.process-step p {
+	color: #444;
+	font-size: 0.98rem;
+	text-align: center;
+	margin: 0;
+}
+
+.process-step::before {
+	content: attr(data-step);
+	display: block;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background: linear-gradient(90deg, #1e90ff 60%, #38b6ff 100%);
+	color: #fff;
+	font-size: 1.5rem;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto 1.1rem auto;
+	box-shadow: 0 2px 12px #1e90ff22;
+	border: 3px solid #fff;
+}
+
+.process-step:nth-child(1)::before {
+	content: '1';
+}
+
+.process-step:nth-child(2)::before {
+	content: '2';
+}
+
+.process-step:nth-child(3)::before {
+	content: '3';
+}
+
+.process-step:nth-child(4)::before {
+	content: '4';
+}
+
+@media (max-width: 900px) {
+	.process-steps {
+		gap: 1.2rem;
+	}
+
+	.process-step {
+		min-width: 150px;
+		max-width: 100%;
+		padding: 1.5rem 0.7rem 1.2rem 0.7rem;
+	}
+}
+
+@media (max-width: 600px) {
+	.process-steps {
+		flex-direction: column;
+		gap: 1.2rem;
+	}
+
+	.process-step {
+		width: 100%;
+		min-width: 0;
+		padding: 1.2rem 0.5rem 1rem 0.5rem;
+	}
+
+	.process-step::before {
+		width: 38px;
+		height: 38px;
+		font-size: 1.1rem;
+	}
+}
+
+/*App.css*/
 /* Footer Contact Items */
 .footer-contact {
 	display: flex;

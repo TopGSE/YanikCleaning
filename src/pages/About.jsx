@@ -50,7 +50,6 @@ function AnimatedVerticalText({ words, duration = 2000 }) {
 const About = () => {
   const stats = [
     { icon: <FaUsers />, number: "250+", label: "Happy Clients" },
-    { icon: <FaAward />, number: "10+", label: "Years Experience" },
     { icon: <FaChartLine />, number: "98%", label: "Satisfaction Rate" },
     { icon: <FaHandsHelping />, number: "50+", label: "Team Members" },
   ];
@@ -71,7 +70,7 @@ const About = () => {
           <div className="hero-text-block">
             <div className="hero-label">Over Ons Bedrijf</div>
 
-            <h1 className="hero-title-minimal">Over Yanik Cleaning</h1>
+            <h1 className="hero-title-minimal">Yanik Cleaning</h1>
 
             <div className="hero-subtitle-minimal">
               <AnimatedVerticalText
@@ -79,6 +78,14 @@ const About = () => {
                   "BETROUWBAAR.",
                   "DUURZAAM.",
                   "TOEGEWIJD AAN KWALITEIT.",
+                  "FLEXIBEL.",
+                  "PROFESSIONEEL.",
+                  "KLANTGERICHT.",
+                  "ERVAREN TEAM.",
+                  "SNELLE SERVICE.",
+                  "TRANSPARANT.",
+                  "INNOVATIEF.",
+                  "LOKAAL BETROKKEN.",
                 ]}
                 duration={1800}
               />
@@ -211,56 +218,166 @@ const About = () => {
         </div>
       </section>
 
-      {/* Statistieken Sectie */}
-      <section className="section stats">
-        <div className="stats-grid">
-          {stats.map((stat, index) => (
-            <div className="stat-item" key={index}>
-              <div className="stat-icon">{stat.icon}</div>
-              <h3 className="stat-number">{stat.number}</h3>
-              <p className="stat-label">
-                {stat.label === "Happy Clients"
-                  ? "Tevreden Klanten"
-                  : stat.label === "Years Experience"
-                  ? "Jaar Ervaring"
-                  : stat.label === "Satisfaction Rate"
-                  ? "Tevredenheid"
-                  : stat.label === "Team Members"
-                  ? "Teamleden"
-                  : stat.label}
-              </p>
+      {/* Enhanced Statistieken Sectie */}
+      <section className="section stats-section">
+        <svg width="0" height="0" style={{ position: "absolute" }}>
+          <defs>
+            <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="60%" stopColor="#1e90ff" />
+              <stop offset="100%" stopColor="#38b6ff" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <div className="container">
+          <div className="stats-header">
+            <div className="stats-badge">
+              <span>Onze Prestaties</span>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Team Sectie */}
-      <section className="section team" id="team">
-        <div className="container">
-          <h2 className="section-title">Ons Team</h2>
-          <p className="section-subtitle">
-            Professioneel, getraind en toegewijd aan uw tevredenheid
-          </p>
-
-          <div className="team-grid">{/* Teamleden kaarten komen hier */}</div>
-        </div>
-      </section>
-
-      {/* Missie Sectie */}
-      <section
-        className="section mission"
-        style={{ backgroundColor: "#e9f5f4" }}
-      >
-        <div className="container">
-          <div className="mission-content">
-            <h2 className="section-title">Onze Missie</h2>
-            <p>
-              Wij bieden uitzonderlijke schoonmaakdiensten die bijdragen aan een
-              gezonde en productieve omgeving voor onze klanten. Daarbij werken
-              we met duurzame methodes die het milieu beschermen. Wij geloven
-              dat een schone ruimte bijdraagt aan welzijn, gezondheid en
-              werkplezier.
+            <h2 className="stats-title">
+              Cijfers die <span className="highlight">Spreken</span>
+            </h2>
+            <p className="stats-subtitle">
+              Resultaten waar we trots op zijn en die onze toewijding aan
+              excellentie tonen
             </p>
+          </div>
+
+          <div className="stats-grid">
+            {stats.map((stat, index) => (
+              <div className="stat-card" key={index}>
+                <div className="stat-icon-wrapper">
+                  <div className="stat-icon" style={{ color: "transparent" }}>
+                    {React.cloneElement(stat.icon, {
+                      fill: "url(#blueGradient)",
+                    })}
+                  </div>
+                </div>
+                <div className="stat-content">
+                  <h3
+                    className="stat-number"
+                    style={{ color: "#1a1a1a !important" }}
+                  >
+                    {stat.number}
+                  </h3>
+                  <p
+                    className="stat-label"
+                    style={{ color: "#555555 !important", fontWeight: "600" }}
+                  >
+                    {stat.label === "Happy Clients"
+                      ? "Tevreden Klanten"
+                      : stat.label === "Years Experience"
+                      ? "Jaar Ervaring"
+                      : stat.label === "Satisfaction Rate"
+                      ? "Tevredenheid"
+                      : stat.label === "Team Members"
+                      ? "Teamleden"
+                      : stat.label}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced Team Sectie */}
+      <section className="section team-section" id="team">
+        <div className="container">
+          <div className="team-header">
+            <div className="team-badge">
+              <span>Ons Team</span>
+            </div>
+            <h2 className="team-title">
+              Ontmoet de <span className="highlight">Professionals</span>
+            </h2>
+            <p className="team-subtitle">
+              Getrainde experts die uw vertrouwen waard zijn en toegewijd zijn
+              aan uw tevredenheid
+            </p>
+          </div>
+
+          <div
+            style={{
+              maxWidth: "600px",
+              margin: "2rem auto 0",
+              textAlign: "center",
+              fontSize: "1.15rem",
+              color: "#222",
+              borderRadius: "1.2rem",
+              padding: "2.2rem 1.5rem",
+            }}
+          >
+            <p>
+              <b>Murat Yanik</b> en <b>Adem Yanik</b> zijn twee broers die samen
+              Yanik Cleaning zijn gestart. Met passie, toewijding en een focus
+              op kwaliteit bouwen zij aan een betrouwbare schoonmaakpartner voor
+              bedrijven en particulieren.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced Missie Sectie */}
+      <section className="section mission-section">
+        <div className="container">
+          <div className="mission-layout">
+            <div className="mission-visual">
+              <div className="mission-icon-grid">
+                <div className="mission-icon-item">
+                  <div className="mission-icon">🌱</div>
+                  <span>Duurzaam</span>
+                </div>
+                <div className="mission-icon-item">
+                  <div className="mission-icon">✨</div>
+                  <span>Schoon</span>
+                </div>
+                <div className="mission-icon-item">
+                  <div className="mission-icon">💚</div>
+                  <span>Gezond</span>
+                </div>
+                <div className="mission-icon-item">
+                  <div className="mission-icon">🎯</div>
+                  <span>Precies</span>
+                </div>
+              </div>
+              <div className="mission-decorative">
+                <div className="floating-element element-1"></div>
+                <div className="floating-element element-2"></div>
+                <div className="floating-element element-3"></div>
+              </div>
+            </div>
+
+            <div className="mission-content">
+              <div className="mission-badge">
+                <span>Onze Missie</span>
+              </div>
+              <h2 className="mission-title">
+                Samen voor een{" "}
+                <span className="highlight">Schonere Toekomst</span>
+              </h2>
+              <div className="mission-text">
+                <p>
+                  Wij bieden uitzonderlijke schoonmaakdiensten die bijdragen aan
+                  een gezonde en productieve omgeving voor onze klanten. Daarbij
+                  werken we met duurzame methodes die het milieu beschermen.
+                </p>
+                <p>
+                  Wij geloven dat een schone ruimte bijdraagt aan welzijn,
+                  gezondheid en werkplezier. Dit is onze belofte aan u en aan
+                  toekomstige generaties.
+                </p>
+              </div>
+              <div className="mission-highlights">
+                <div className="highlight-item">
+                  <div className="highlight-icon">🏆</div>
+                  <span>Kwaliteitsgarantie</span>
+                </div>
+                <div className="highlight-item">
+                  <div className="highlight-icon">🌍</div>
+                  <span>Milieuvriendelijk</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

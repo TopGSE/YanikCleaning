@@ -168,21 +168,34 @@ const Services = () => {
       </section>
 
       {/* Service Process Section */}
-      <section
-        className="section process"
-        style={{ backgroundColor: "#f8f9fa" }}
-      >
+      <section className="section service-process">
         <div className="container">
-          <h2 className="section-title">Ons Proces</h2>
-          <p
-            className="section-subtitle"
-            style={{ textAlign: "center", marginBottom: "3rem" }}
-          >
-            Hoe wij zorgen voor een perfect schoon resultaat, elke keer weer
+          <h2 className="section-title">Onze Werkwijze</h2>
+          <p className="section-subtitle" style={{ textAlign: "center" }}>
+            Hoe wij uw schoonmaakbehoeften aanpakken
           </p>
 
           <div className="process-steps">
-            {/* Process steps would go here */}
+            <div className="process-step">
+              <h3>Een Consultatie</h3>
+              <p>We bespreken uw specifieke schoonmaakbehoeften.</p>
+            </div>
+            <div className="process-step">
+              <h3>Op Maat Gemaakte Offerte</h3>
+              <p>
+                U ontvangt een transparante offerte zonder verborgen kosten.
+              </p>
+            </div>
+            <div className="process-step">
+              <h3>Professionele Uitvoering</h3>
+              <p>Ons team gaat aan de slag met hoogwaardige schoonmaak.</p>
+            </div>
+            <div className="process-step">
+              <h3>Kwaliteitscontrole</h3>
+              <p>
+                We controleren het resultaat en zorgen voor uw tevredenheid.
+              </p>
+            </div>
           </div>
         </div>
       </section>
