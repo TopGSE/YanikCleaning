@@ -1,4 +1,61 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+
+// Hook to detect if an element is in viewport
+function useInView(options) {
+  const ref = useRef();
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      options
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, [options]);
+  return [ref, inView];
+}
+// Animated counter for stats
+function AnimatedCounter({
+  value,
+  duration = 1800,
+  isPercent = false,
+  isPlus = false,
+  start = false,
+}) {
+  const [count, setCount] = useState(0);
+  const ref = useRef();
+  useEffect(() => {
+    if (!start) {
+      setCount(0);
+      return;
+    }
+    let startVal = 0;
+    let end = typeof value === "number" ? value : parseInt(value);
+    if (isNaN(end)) end = 0;
+    let startTime = null;
+    function animateCounter(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      setCount(Math.floor(progress * (end - startVal) + startVal));
+      if (progress < 1) {
+        ref.current = requestAnimationFrame(animateCounter);
+      } else {
+        setCount(end);
+      }
+    }
+    ref.current = requestAnimationFrame(animateCounter);
+    return () => cancelAnimationFrame(ref.current);
+  }, [value, duration, start]);
+  return (
+    <span>
+      {count}
+      {isPercent && "%"}
+      {isPlus && "+"}
+    </span>
+  );
+}
 import { FaUsers, FaAward, FaChartLine, FaHandsHelping } from "react-icons/fa";
 import "./About.css";
 
@@ -49,10 +106,23 @@ function AnimatedVerticalText({ words, duration = 2000 }) {
 
 const About = () => {
   const stats = [
-    { icon: <FaUsers />, number: "250+", label: "Happy Clients" },
-    { icon: <FaChartLine />, number: "98%", label: "Satisfaction Rate" },
-    { icon: <FaHandsHelping />, number: "50+", label: "Team Members" },
+    { icon: <FaUsers />, number: 250, label: "Happy Clients", isPlus: true },
+    {
+      icon: <FaChartLine />,
+      number: 98,
+      label: "Satisfaction Rate",
+      isPercent: true,
+    },
+    {
+      icon: <FaHandsHelping />,
+      number: 50,
+      label: "Team Members",
+      isPlus: true,
+    },
   ];
+
+  // Intersection observer for stats section
+  const [statsRef, statsInView] = useInView({ threshold: 0.4 });
 
   return (
     <div className="about-page">
@@ -219,7 +289,7 @@ const About = () => {
       </section>
 
       {/* Enhanced Statistieken Sectie */}
-      <section className="section stats-section">
+      <section className="section stats-section" ref={statsRef}>
         <svg width="0" height="0" style={{ position: "absolute" }}>
           <defs>
             <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -257,7 +327,13 @@ const About = () => {
                     className="stat-number"
                     style={{ color: "#1a1a1a !important" }}
                   >
-                    {stat.number}
+                    <AnimatedCounter
+                      value={stat.number}
+                      duration={1800}
+                      isPercent={stat.isPercent}
+                      isPlus={stat.isPlus}
+                      start={statsInView}
+                    />
                   </h3>
                   <p
                     className="stat-label"
