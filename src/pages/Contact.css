@@ -1,3 +1,26 @@
+/* Testimonial swipe animation for quote-card */
+
+/* Slide left animation for testimonial */
+.testimonial-swipe {
+	transition: opacity 0.38s cubic-bezier(.6, .2, .4, 1), transform 0.38s cubic-bezier(.6, .2, .4, 1);
+	will-change: opacity, transform;
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.testimonial-swipe.animating {
+	opacity: 0;
+	transform: translateX(-40px);
+}
+
+.quote-card .quote-content {
+	min-height: 120px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* CSS Variables */

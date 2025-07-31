@@ -8,7 +8,35 @@ import {
   FaCheckCircle,
   FaPaperPlane,
 } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const testimonials = [
+  {
+    text: '"Uitstekende service en zeer professioneel. Onze kantoren zijn altijd perfect schoon!"',
+    author: "— Sarah M., Gent",
+    title: "Snelle service",
+  },
+  {
+    text: '"Betrouwbaar, flexibel en altijd vriendelijk. Een echte aanrader!"',
+    author: "— Tom V., Sint-Niklaas",
+    title: "Betrouwbare partner",
+  },
+  {
+    text: '"Altijd op tijd en met oog voor detail. Mijn bedrijf straalt dankzij Yanik Cleaning."',
+    author: "— Anja D., Lokeren",
+    title: "Oog voor detail",
+  },
+  {
+    text: '"Goede communicatie en transparante prijzen. Geen verrassingen, alleen kwaliteit."',
+    author: "— Pieter S., Aalst",
+    title: "Transparant & duidelijk",
+  },
+  {
+    text: '"Het team denkt mee en levert altijd topresultaat. Zeer tevreden!"',
+    author: "— Els B., Wetteren",
+    title: "Topresultaat",
+  },
+];
 import emailjs from "emailjs-com";
 import "./Contact.css";
 
@@ -17,6 +45,20 @@ const TEMPLATE_ID = "template_wvlg1sm"; // Updated with your EmailJS template ID
 const USER_ID = "WQUCY_JOBfyNDudpa"; // Updated with your EmailJS public key (user ID)
 
 const Contact = () => {
+  // Testimonial slider state (must be inside the component)
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimating(true);
+      setTimeout(() => {
+        setTestimonialIndex((prev) => (prev + 1) % testimonials.length);
+        setAnimating(false);
+      }, 350); // Animation duration
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -293,14 +335,15 @@ const Contact = () => {
               </div>
 
               <div className="sidebar-card quote-card">
-                <div className="quote-content">
-                  <h3>Snelle service</h3>
-                  <p>
-                    "Uitstekende service en zeer professioneel. Onze kantoren
-                    zijn altijd perfect schoon!"
-                  </p>
+                <div
+                  className={`quote-content testimonial-swipe${
+                    animating ? " animating" : ""
+                  }`}
+                >
+                  <h3>{testimonials[testimonialIndex].title}</h3>
+                  <p>{testimonials[testimonialIndex].text}</p>
                   <div className="quote-author">
-                    <strong>— Sarah M., Gent</strong>
+                    <strong>{testimonials[testimonialIndex].author}</strong>
                   </div>
                 </div>
               </div>
