@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 /* Testimonial swipe animation for quote-card */
 
 /* Slide left animation for testimonial */
@@ -20,8 +22,6 @@
 	justify-content: center;
 	align-items: flex-start;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* CSS Variables */
 :root {
