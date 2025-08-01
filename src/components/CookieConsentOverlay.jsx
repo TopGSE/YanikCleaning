@@ -42,30 +42,32 @@ const CookieConsentOverlay = () => {
   }, [location, privacyDismissed]);
 
   const handleAccept = () => {
-    localStorage.setItem(
-      COOKIE_KEY,
-      JSON.stringify({
-        essential: true,
-        statistics: true,
-        marketing: true,
-        status: "accepted",
-      })
-    );
+    const consentData = {
+      essential: true,
+      statistics: true,
+      marketing: true,
+      status: "accepted",
+      timestamp: new Date().toISOString(),
+      version: "1.0",
+      method: "accept_all",
+    };
+    localStorage.setItem(COOKIE_KEY, JSON.stringify(consentData));
     setCookie(COOKIE_KEY, "accepted", 180);
     setVisible(false);
   };
 
   // Decline all non-essential cookies (Weigeren)
   const handleDecline = () => {
-    localStorage.setItem(
-      COOKIE_KEY,
-      JSON.stringify({
-        essential: true,
-        statistics: false,
-        marketing: false,
-        status: "declined",
-      })
-    );
+    const consentData = {
+      essential: true,
+      statistics: false,
+      marketing: false,
+      status: "declined",
+      timestamp: new Date().toISOString(),
+      version: "1.0",
+      method: "decline_all",
+    };
+    localStorage.setItem(COOKIE_KEY, JSON.stringify(consentData));
     setCookie(COOKIE_KEY, "declined", 180);
     setVisible(false);
   };
@@ -86,14 +88,22 @@ const CookieConsentOverlay = () => {
         </div>
         <h2 className="cookie-title">Wij respecteren uw privacy</h2>
         <p className="cookie-desc">
-          Deze website gebruikt cookies om uw ervaring te verbeteren,
-          statistieken te verzamelen en relevante content te tonen. U kunt
-          kiezen welke cookies u toestaat. Lees ons{" "}
+          <strong>Yanik Cleaning</strong> gebruikt cookies om uw ervaring te
+          verbeteren, statistieken te verzamelen en relevante content te tonen.
+          U heeft volledige controle over welke cookies u toestaat. U kunt uw
+          keuze op elk moment wijzigen of intrekken. Lees ons{" "}
           <Link to="/privacy" className="cookie-link">
             privacybeleid
           </Link>{" "}
-          voor meer informatie.
+          voor meer informatie over hoe wij uw gegevens verwerken.
         </p>
+        <div className="cookie-gdpr-notice">
+          <small>
+            Door op "Accepteer" te klikken, geeft u toestemming voor het gebruik
+            van cookies zoals beschreven. U kunt uw toestemming op elk moment
+            intrekken.
+          </small>
+        </div>
         <div className="cookie-btn-group">
           <button
             className="cookie-btn cookie-accept"
@@ -131,8 +141,9 @@ const CookieConsentOverlay = () => {
                     Noodzakelijke cookies
                   </div>
                   <div className="cookie-toggle-desc">
-                    Deze cookies zijn nodig voor de basisfunctionaliteit van de
-                    website
+                    Essentieel voor de basisfunctionaliteit van de website. Deze
+                    kunnen niet worden uitgeschakeld omdat de website anders
+                    niet zou werken.
                   </div>
                 </div>
                 <input
@@ -151,7 +162,8 @@ const CookieConsentOverlay = () => {
                     Statistische cookies
                   </div>
                   <div className="cookie-toggle-desc">
-                    Helpen ons begrijpen hoe bezoekers de website gebruiken
+                    Helpen ons begrijpen hoe bezoekers de website gebruiken door
+                    anonieme gegevens over websitebezoeken te verzamelen.
                   </div>
                 </div>
                 <input
@@ -177,7 +189,8 @@ const CookieConsentOverlay = () => {
                 <div className="cookie-toggle-content">
                   <div className="cookie-toggle-title">Marketing cookies</div>
                   <div className="cookie-toggle-desc">
-                    Gebruikt voor gepersonaliseerde advertenties en marketing
+                    Gebruikt voor gepersonaliseerde advertenties en het volgen
+                    van uw internetgedrag voor marketingdoeleinden.
                   </div>
                 </div>
                 <input
@@ -203,15 +216,16 @@ const CookieConsentOverlay = () => {
             <button
               className="cookie-btn cookie-save"
               onClick={() => {
-                localStorage.setItem(
-                  COOKIE_KEY,
-                  JSON.stringify({
-                    essential: true,
-                    statistics: categories.statistics,
-                    marketing: categories.marketing,
-                    status: "custom",
-                  })
-                );
+                const consentData = {
+                  essential: true,
+                  statistics: categories.statistics,
+                  marketing: categories.marketing,
+                  status: "custom",
+                  timestamp: new Date().toISOString(),
+                  version: "1.0",
+                  method: "custom_selection",
+                };
+                localStorage.setItem(COOKIE_KEY, JSON.stringify(consentData));
                 setCookie(COOKIE_KEY, "custom", 180);
                 setVisible(false);
               }}
@@ -219,6 +233,12 @@ const CookieConsentOverlay = () => {
             >
               Voorkeuren opslaan
             </button>
+            <div className="cookie-withdraw-notice">
+              <small>
+                U kunt uw toestemming op elk moment intrekken via de
+                cookie-instellingen in de footer van onze website.
+              </small>
+            </div>
           </div>
         )}
       </div>
@@ -285,8 +305,22 @@ const CookieConsentOverlay = () => {
           font-size: 14px;
           line-height: 1.5;
           color: #5a6c7d;
-          margin: 0 24px 24px 24px;
+          margin: 0 24px 16px 24px;
           text-align: left;
+        }
+        
+        .cookie-gdpr-notice {
+          background: #f8f9fa;
+          border: 1px solid #e9ecef;
+          border-radius: 4px;
+          padding: 12px 16px;
+          margin: 0 24px 20px 24px;
+        }
+        
+        .cookie-gdpr-notice small {
+          font-size: 12px;
+          color: #6c757d;
+          line-height: 1.4;
         }
         
         .cookie-link {
@@ -470,6 +504,20 @@ const CookieConsentOverlay = () => {
         .cookie-save:hover {
           background: #1c7ed6;
           border-color: #1c7ed6;
+        }
+        
+        .cookie-withdraw-notice {
+          margin-top: 16px;
+          padding: 12px;
+          background: #fff3cd;
+          border: 1px solid #ffeaa7;
+          border-radius: 4px;
+        }
+        
+        .cookie-withdraw-notice small {
+          font-size: 11px;
+          color: #856404;
+          line-height: 1.3;
         }
         
         @media (max-width: 768px) {
