@@ -332,7 +332,7 @@ const Footer = () => {
                 </div>
                 <div className="contact-item">
                   <span style={{ fontSize: "0.85rem", color: "#94a3b8" }}>
-                    BTW: BE1008.813.559
+                    BE1008.813.559
                   </span>
                 </div>
               </div>
