@@ -82,7 +82,7 @@ const CookieConsentOverlay = () => {
     >
       <div className="cookie-overlay-card">
         <div className="cookie-icon">
-          <FaShieldAlt size={38} color="#028090" />
+          <FaShieldAlt size={24} color="#ffffff" />
         </div>
         <h2 className="cookie-title">Wij respecteren uw privacy</h2>
         <p className="cookie-desc">
@@ -126,6 +126,15 @@ const CookieConsentOverlay = () => {
             <h3>Cookie-instellingen</h3>
             <div className="cookie-toggle-group">
               <label className="cookie-toggle">
+                <div className="cookie-toggle-content">
+                  <div className="cookie-toggle-title">
+                    Noodzakelijke cookies
+                  </div>
+                  <div className="cookie-toggle-desc">
+                    Deze cookies zijn nodig voor de basisfunctionaliteit van de
+                    website
+                  </div>
+                </div>
                 <input
                   type="checkbox"
                   checked
@@ -135,10 +144,16 @@ const CookieConsentOverlay = () => {
                 <span className="toggle-slider essential">
                   <span className="toggle-knob" />
                 </span>
-                Noodzakelijke cookies{" "}
-                <span className="cookie-toggle-desc">(Altijd actief)</span>
               </label>
               <label className="cookie-toggle">
+                <div className="cookie-toggle-content">
+                  <div className="cookie-toggle-title">
+                    Statistische cookies
+                  </div>
+                  <div className="cookie-toggle-desc">
+                    Helpen ons begrijpen hoe bezoekers de website gebruiken
+                  </div>
+                </div>
                 <input
                   type="checkbox"
                   checked={categories.statistics}
@@ -157,9 +172,14 @@ const CookieConsentOverlay = () => {
                 >
                   <span className="toggle-knob" />
                 </span>
-                Statistische cookies
               </label>
               <label className="cookie-toggle">
+                <div className="cookie-toggle-content">
+                  <div className="cookie-toggle-title">Marketing cookies</div>
+                  <div className="cookie-toggle-desc">
+                    Gebruikt voor gepersonaliseerde advertenties en marketing
+                  </div>
+                </div>
                 <input
                   type="checkbox"
                   checked={categories.marketing}
@@ -178,7 +198,6 @@ const CookieConsentOverlay = () => {
                 >
                   <span className="toggle-knob" />
                 </span>
-                Marketing cookies
               </label>
             </div>
             <button
@@ -204,190 +223,295 @@ const CookieConsentOverlay = () => {
         )}
       </div>
       <style>{`
-        .cookie-decline {
-          background: #fff;
-          color: #e74c3c;
-          border: 1px solid #e74c3c;
-        }
-        .cookie-decline:hover {
-          background: #e74c3c;
-          color: #fff;
-        }
         .cookie-overlay-consent {
           position: fixed;
           inset: 0;
-          background: rgba(24, 49, 83, 0.82);
+          background: rgba(0, 0, 0, 0.4);
           z-index: 99999;
           display: flex;
           align-items: center;
           justify-content: center;
+          padding: 20px;
         }
+        
         .cookie-overlay-card {
-          background: #fff;
-          border-radius: 1.5rem;
-          box-shadow: 0 8px 32px #18315333;
-          padding: 2.7rem 2.2rem 2.2rem 2.2rem;
-          max-width: 95vw;
-          width: 370px;
-          text-align: center;
+          background: #ffffff;
+          border-radius: 8px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+          border: 1px solid #e0e0e0;
+          padding: 0;
+          max-width: 480px;
+          width: 100%;
           position: relative;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          animation: slideUp 0.6s cubic-bezier(.23,1.01,.32,1) both;
+          animation: fadeInScale 0.3s ease-out both;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
-        @keyframes slideUp {
+        
+        @keyframes fadeInScale {
           from {
-            transform: translateY(60px);
+            transform: scale(0.9);
             opacity: 0;
           }
           to {
-            transform: translateY(0);
+            transform: scale(1);
             opacity: 1;
           }
         }
+        
         .cookie-icon {
-          margin-bottom: 1.1rem;
+          position: absolute;
+          top: -12px;
+          left: 24px;
+          width: 24px;
+          height: 24px;
+          background: #1e90ff;
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 2px 8px rgba(30, 144, 255, 0.3);
         }
+        
         .cookie-title {
-          font-size: 1.4rem;
-          font-weight: 700;
-          color: #183153;
-          margin-bottom: 1.1rem;
+          font-size: 18px;
+          font-weight: 600;
+          color: #2c3e50;
+          margin: 32px 24px 12px 24px;
+          text-align: left;
+          line-height: 1.3;
         }
+        
         .cookie-desc {
-          font-size: 1.05rem;
-          color: #444;
-          margin-bottom: 1.5rem;
+          font-size: 14px;
+          line-height: 1.5;
+          color: #5a6c7d;
+          margin: 0 24px 24px 24px;
+          text-align: left;
         }
+        
         .cookie-link {
-          color: #028090;
+          color: #1e90ff;
+          text-decoration: none;
+          font-weight: 500;
+        }
+        
+        .cookie-link:hover {
           text-decoration: underline;
         }
+        
         .cookie-btn-group {
           display: flex;
-          gap: 0.7rem;
-          margin-bottom: 0.7rem;
+          gap: 8px;
+          padding: 0 24px;
+          margin-bottom: 16px;
         }
+        
         .cookie-btn {
-          margin: 0.5rem 0.3rem;
-          padding: 0.7rem 1.6rem;
-          border-radius: 8px;
-          font-size: 1.05rem;
-          font-weight: 600;
-          border: none;
+          padding: 10px 16px;
+          border-radius: 4px;
+          font-size: 14px;
+          font-weight: 500;
+          border: 1px solid;
           cursor: pointer;
-          box-shadow: 0 2px 8px #02809022;
-          transition: background 0.2s, color 0.2s;
+          transition: all 0.2s ease;
+          flex: 1;
+          text-align: center;
         }
+        
         .cookie-accept {
-          background: linear-gradient(90deg, #00a896 60%, #028090 100%);
-          color: #fff;
+          background: #1e90ff;
+          border-color: #1e90ff;
+          color: #ffffff;
         }
+        
         .cookie-accept:hover {
-          background: linear-gradient(90deg, #028090 60%, #00a896 100%);
+          background: #1c7ed6;
+          border-color: #1c7ed6;
         }
-        .cookie-essential {
-          background: #fff;
-          color: #028090;
-          border: 1px solid #00a896;
+        
+        .cookie-decline {
+          background: #ffffff;
+          border-color: #d1d5db;
+          color: #5a6c7d;
         }
-        .cookie-essential:hover {
-          background: #028090;
-          color: #fff;
+        
+        .cookie-decline:hover {
+          background: #f8f9fa;
+          border-color: #9ca3af;
         }
+        
         .cookie-customize {
-          background: #f7f7f7;
-          color: #444;
-          border: 1px solid #ddd;
-          margin-bottom: 0.7rem;
-        }
-        .cookie-customize:hover {
-          background: #02809022;
-        }
-        .cookie-customize-panel {
-          background: #f7f7f7;
-          border-radius: 1rem;
-          box-shadow: 0 2px 8px #18315322;
-          padding: 1.2rem;
-          margin-top: 1.2rem;
+          background: transparent;
+          color: #1e90ff;
+          font-size: 13px;
+          font-weight: 500;
+          padding: 8px 24px 16px 24px;
+          margin: 0;
+          border: none;
           text-align: left;
-          font-size: 0.98rem;
-          width: 100%;
-          opacity: 0;
-          transform: translateY(30px);
-          pointer-events: none;
-          transition: opacity 0.45s cubic-bezier(.23,1.01,.32,1), transform 0.45s cubic-bezier(.23,1.01,.32,1);
+          cursor: pointer;
+          transition: color 0.2s ease;
         }
+        
+        .cookie-customize:hover {
+          color: #1c7ed6;
+        }
+        
+        .cookie-customize-panel {
+          background: #f8f9fa;
+          border-top: 1px solid #e9ecef;
+          padding: 20px 24px 24px 24px;
+          margin-top: 0;
+          opacity: 0;
+          max-height: 0;
+          overflow: hidden;
+          pointer-events: none;
+          transition: all 0.3s ease;
+        }
+        
         .cookie-customize-panel.slide-in {
           opacity: 1;
-          transform: translateY(0);
+          max-height: 400px;
           pointer-events: auto;
         }
+        
+        .cookie-customize-panel h3 {
+          font-size: 16px;
+          font-weight: 600;
+          color: #2c3e50;
+          margin: 0 0 16px 0;
+        }
+        
         .cookie-toggle-group {
           display: flex;
           flex-direction: column;
-          gap: 0.7rem;
-          margin-bottom: 1.1rem;
+          gap: 12px;
+          margin-bottom: 20px;
         }
+        
         .cookie-toggle {
           display: flex;
           align-items: center;
-          gap: 0.7rem;
-          font-size: 1rem;
+          justify-content: space-between;
+          padding: 12px 0;
+          font-size: 14px;
+          color: #2c3e50;
+          cursor: pointer;
+          border-bottom: 1px solid #e9ecef;
         }
+        
+        .cookie-toggle:last-child {
+          border-bottom: none;
+        }
+        
+        .cookie-toggle-content {
+          flex: 1;
+        }
+        
+        .cookie-toggle-title {
+          font-weight: 500;
+          margin-bottom: 2px;
+        }
+        
+        .cookie-toggle-desc {
+          font-size: 12px;
+          color: #6c757d;
+          line-height: 1.3;
+        }
+        
         .toggle-slider {
           display: inline-block;
-          width: 38px;
-          height: 22px;
-          background: #ddd;
-          border-radius: 999px;
+          width: 40px;
+          height: 20px;
+          background: #dee2e6;
+          border-radius: 10px;
           position: relative;
-          margin-right: 0.5rem;
-          transition: background 0.25s;
-          box-shadow: 0 1px 4px #18315322;
+          transition: background 0.2s ease;
+          flex-shrink: 0;
+          margin-left: 12px;
         }
+        
         .toggle-slider.essential {
-          background: #028090;
+          background: #1e90ff;
         }
+        
         .toggle-slider.active {
-          background: linear-gradient(90deg, #00a896 60%, #028090 100%);
+          background: #1e90ff;
         }
+        
         .toggle-knob {
           position: absolute;
           top: 2px;
           left: 2px;
-          width: 18px;
-          height: 18px;
-          background: #fff;
+          width: 16px;
+          height: 16px;
+          background: #ffffff;
           border-radius: 50%;
-          box-shadow: 0 2px 6px #18315333;
-          transition: left 0.25s cubic-bezier(.23,1.01,.32,1), background 0.2s;
-          border: 2px solid #fff;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+          transition: left 0.2s ease;
         }
-        .toggle-slider.active .toggle-knob {
-          left: 18px;
-          background: #fff;
-        }
+        
+        .toggle-slider.active .toggle-knob,
         .toggle-slider.essential .toggle-knob {
-          background: #028090;
-          border: 2px solid #fff;
+          left: 22px;
         }
-        .cookie-toggle-desc {
-          font-size: 0.92em;
-          color: #888;
-        }
+        
         .cookie-save {
-          background: linear-gradient(90deg, #00a896 60%, #028090 100%);
-          color: #fff;
+          background: #1e90ff;
+          border: 1px solid #1e90ff;
+          color: #ffffff;
+          width: 100%;
+          padding: 10px 16px;
+          border-radius: 4px;
+          font-weight: 500;
+          font-size: 14px;
         }
+        
         .cookie-save:hover {
-          background: linear-gradient(90deg, #028090 60%, #00a896 100%);
+          background: #1c7ed6;
+          border-color: #1c7ed6;
         }
-        @media (max-width: 600px) {
+        
+        @media (max-width: 768px) {
           .cookie-overlay-card {
-            width: 98vw;
-            padding: 1.2rem 0.5rem 1.1rem 0.5rem;
+            margin: 16px;
+            max-width: 100%;
+          }
+          
+          .cookie-btn-group {
+            flex-direction: column;
+          }
+          
+          .cookie-btn {
+            flex: none;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .cookie-title {
+            font-size: 16px;
+            margin: 28px 20px 12px 20px;
+          }
+          
+          .cookie-desc {
+            font-size: 13px;
+            margin: 0 20px 20px 20px;
+          }
+          
+          .cookie-btn-group {
+            padding: 0 20px;
+          }
+          
+          .cookie-customize {
+            padding: 8px 20px 16px 20px;
+          }
+          
+          .cookie-customize-panel {
+            padding: 16px 20px 20px 20px;
+          }
+          
+          .cookie-icon {
+            left: 20px;
           }
         }
       `}</style>
