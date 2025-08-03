@@ -41,6 +41,21 @@ const CookieConsentOverlay = () => {
     return () => window.removeEventListener("openCookieConsent", openConsent);
   }, [location, privacyDismissed]);
 
+  // Lock/unlock body scroll when overlay is visible
+  useEffect(() => {
+    if (visible) {
+      // Store original overflow value
+      const originalOverflow = document.body.style.overflow;
+      // Lock scroll
+      document.body.style.overflow = "hidden";
+
+      return () => {
+        // Restore original overflow when overlay closes
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [visible]);
+
   const handleAccept = () => {
     const consentData = {
       essential: true,
@@ -252,6 +267,7 @@ const CookieConsentOverlay = () => {
           align-items: center;
           justify-content: center;
           padding: 20px;
+          overflow-y: auto;
         }
         
         .cookie-overlay-card {
@@ -265,6 +281,9 @@ const CookieConsentOverlay = () => {
           position: relative;
           animation: fadeInScale 0.3s ease-out both;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          max-height: 90vh;
+          overflow-y: auto;
+          margin: auto;
         }
         
         @keyframes fadeInScale {
@@ -405,7 +424,7 @@ const CookieConsentOverlay = () => {
         
         .cookie-customize-panel.slide-in {
           opacity: 1;
-          max-height: 400px;
+          max-height: 500px;
           pointer-events: auto;
         }
         
