@@ -1004,8 +1004,7 @@
 	}
 
 	.story-values {
-		flex-direction: column;
-		gap: 1rem;
+		display: none;
 	}
 
 	.value-item {
@@ -1082,7 +1081,11 @@
 	}
 
 	.visual-card {
-		padding: 2rem;
+		display: none;
+	}
+
+	.mission-visual {
+		display: none;
 	}
 
 	.stats-mini {

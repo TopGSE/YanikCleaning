@@ -202,14 +202,14 @@ const Navbar = () => {
 
             <div className="navbar__mobile-contact-grid">
               <a
-                href="tel:+32123456789"
+                href="tel:+32470458644"
                 className="navbar__mobile-contact-item"
               >
                 <FaPhone />
                 <span>Bel Nu</span>
               </a>
               <a
-                href="mailto:info@yanikcleaning.be"
+                href="mailto:yanikcleaning@gmail.com"
                 className="navbar__mobile-contact-item"
               >
                 <FaEnvelope />
